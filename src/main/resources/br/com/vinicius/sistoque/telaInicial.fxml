@@ -12,13 +12,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.TelaInicial">
    <left>
       <AnchorPane prefHeight="469.0" prefWidth="249.0" style="-fx-background-color: #004AAD;" BorderPane.alignment="CENTER">
          <children>
             <VBox prefHeight="400.0" prefWidth="250.0">
                <children>
-                  <Button fx:id="buttonConsutaEstoq" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="180.0" text="Consutar Estoque">
+                  <Button fx:id="buttonConsutaEstoq" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToEstoque" prefHeight="25.0" prefWidth="180.0" text="Consutar Estoque">
                      <VBox.margin>
                         <Insets left="35.0" top="50.0" />
                      </VBox.margin>

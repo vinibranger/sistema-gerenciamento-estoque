@@ -17,7 +17,7 @@ import javafx.scene.control.MenuItem;
  *
  * @author VINICIUS
  */
-public class MostarEstoqueController implements Initializable {
+public class MostrarEstoqueController implements Initializable {
 
     @FXML
     private Button buttonConsutaEstoq;

@@ -41,9 +41,9 @@ public class TelaInicial {
     private MenuItem menuItemProdutoEstoque;
     @FXML
     private MenuItem menuItemSaidaProduto;
-    @FXML
     
-    private void switchToPrimary() throws IOException {
-        App.setRoot("");
+    @FXML
+    void switchToEstoque() throws IOException {
+        App.setRoot("MostrarEstoque");
     }
 }
