@@ -7,6 +7,7 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 
 public class TelaInicial {
+
     @FXML
     private Button buttonConsutaEstoq;
     @FXML
@@ -41,9 +42,69 @@ public class TelaInicial {
     private MenuItem menuItemProdutoEstoque;
     @FXML
     private MenuItem menuItemSaidaProduto;
+
+    @FXML
+    void switchToEntradaProtudo() throws IOException {
+        App.setRoot("cadastroentradaproduto");
+    }
+
+    @FXML
+    void switchToSaidaProduto() throws IOException {
+        App.setRoot("");
+    }
+
+    @FXML
+    void switchToCadastroCliente() throws IOException {
+        App.setRoot("cadastrocliente");
+    }
+
+    @FXML
+    void switchToCadastroFornecedor() throws IOException {
+        App.setRoot("CadastroFornecedor");
+    }
+
+    @FXML
+    void switchToCadastroFuncio() throws IOException {
+        App.setRoot("CadastroFuncio");
+    }
+
+    @FXML
+    void switchToCadastroproduto() throws IOException {
+        App.setRoot("Cadastroproduto");
+    }
+
+    @FXML
+    void switchToMostrarEstoque() throws IOException {
+        App.setRoot("MostrarEstoque");
+    }
+
+    @FXML
+    void switchToRelatorioEstoque() throws IOException {
+        App.setRoot("RelatorioEstoque");
+    }
+
+    @FXML
+    void switchToRelatorios() throws IOException {
+        App.setRoot("Relatorios");
+    }
+
+    @FXML
+    void switchToConsultaFornecedor() throws IOException {
+        App.setRoot("ConsultaFornecedor");
+    }
     
     @FXML
-    void switchToEstoque() throws IOException {
-        App.setRoot("MostrarEstoque");
+    void switchToConsultaProduto() throws IOException {
+        App.setRoot("");
+    }
+    
+    @FXML
+    void switchToConsultaCliente() throws IOException {
+        App.setRoot("");
+    }
+    
+    @FXML
+    void switchToConsultaFuncionario() throws IOException {
+        App.setRoot("");
     }
 }

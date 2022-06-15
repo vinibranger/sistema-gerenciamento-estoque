@@ -4,6 +4,7 @@
  */
 package br.com.vinicius.sistoque;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -55,10 +56,60 @@ public class MostrarEstoqueController implements Initializable {
     private MenuItem menuItemSaidaProduto;
     @FXML
     private Button pesquisa;
-   
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-    }    
-    
+
+    }
+
+    @FXML
+    void switchToEntradaProtudo() throws IOException {
+        App.setRoot("cadastroentradaproduto");
+    }
+
+    @FXML
+    void switchToSaidaProduto() throws IOException {
+        App.setRoot("MostrarEstoque");
+    }
+
+    @FXML
+    void switchToCadastroCliente() throws IOException {
+        App.setRoot("cadastrocliete");
+    }
+
+    @FXML
+    void switchToCadastroFornecedor() throws IOException {
+        App.setRoot("CadastroFornecedor");
+    }
+
+    @FXML
+    void switchToCadastroFuncio() throws IOException {
+        App.setRoot("CadastroFuncio");
+    }
+
+    @FXML
+    void switchToCadastroproduto() throws IOException {
+        App.setRoot("Cadastroproduto");
+    }
+
+    @FXML
+    void switchToConsultaFornecedor() throws IOException {
+        App.setRoot("ConsultaFornecedor");
+    }
+
+    @FXML
+    void switchToMostrarEstoque() throws IOException {
+        App.setRoot("MostrarEstoque");
+    }
+
+    @FXML
+    void switchToRelatorioEstoque() throws IOException {
+        App.setRoot("RelatorioEstoque");
+    }
+
+    @FXML
+    void switchToRelatorios() throws IOException {
+        App.setRoot("Relatorios");
+    }
+
 }

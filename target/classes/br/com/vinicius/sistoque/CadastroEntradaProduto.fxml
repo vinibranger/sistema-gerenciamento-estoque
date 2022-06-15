@@ -15,8 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="br.com.vinicius.sistoque.CadastroEntradaProdutoController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.CadastroEntradaProdutoController">
    <children>
       <VBox layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="250.0" style="-fx-background-color: #004aad;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -28,11 +27,25 @@
                   <Insets left="35.0" top="50.0" />
                </VBox.margin>
             </Button>
-            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Consultar">
+            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Entrada e Saída">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
                <items>
-                  <MenuItem mnemonicParsing="false" text="Produtos" />
-                  <MenuItem mnemonicParsing="false" text="Clientes" />
-                  <MenuItem mnemonicParsing="false" text="Funcionários" />
+                  <MenuItem mnemonicParsing="false" text="Entrada de produtos" />
+                  <MenuItem mnemonicParsing="false" text="Saída de produtos" />
+               </items>
+               <VBox.margin>
+                  <Insets left="35.0" top="50.0" />
+               </VBox.margin>
+            </MenuButton>
+            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Relatório">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Emitir Relatório" />
+                  <MenuItem mnemonicParsing="false" text="Produtos em Estoque" />
                </items>
                <font>
                   <Font name="Arial Bold" size="13.0" />
@@ -61,10 +74,11 @@
                   <Insets left="35.0" top="50.0" />
                </VBox.margin>
             </MenuButton>
-            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Relatório">
+            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Consultar">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Emitir Relatório" />
-                  <MenuItem mnemonicParsing="false" text="Produtos em Estoque" />
+                  <MenuItem mnemonicParsing="false" text="Produtos" />
+                  <MenuItem mnemonicParsing="false" text="Clientes" />
+                  <MenuItem mnemonicParsing="false" text="Funcionários" />
                </items>
                <font>
                   <Font name="Arial Bold" size="13.0" />
@@ -72,21 +86,6 @@
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
-               <VBox.margin>
-                  <Insets left="35.0" top="50.0" />
-               </VBox.margin>
-            </MenuButton>
-            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Entrada e Saída">
-               <font>
-                  <Font name="Arial Bold" size="13.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Entrada de produtos" />
-                  <MenuItem mnemonicParsing="false" text="Saída de produtos" />
-               </items>
                <VBox.margin>
                   <Insets left="35.0" top="50.0" />
                </VBox.margin>
