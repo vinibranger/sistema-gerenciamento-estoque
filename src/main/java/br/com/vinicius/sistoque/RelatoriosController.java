@@ -53,7 +53,7 @@ public class RelatoriosController implements Initializable {
     @FXML
     private MenuItem menuItemSaidaProduto;
     
-      @FXML
+    @FXML
     private Label labelDateFim;
 
     @FXML
