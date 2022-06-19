@@ -6,13 +6,15 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class TelaLogiController implements Initializable {
-
+    @FXML
+     Button buttonSair;
     @FXML
     PasswordField senhaPasswordField;
     @FXML
@@ -50,7 +52,8 @@ public class TelaLogiController implements Initializable {
     }
 
     @FXML
-    void digitarUser() {
+    void botaoSair() {
+        System.exit(0);
 
     }
 

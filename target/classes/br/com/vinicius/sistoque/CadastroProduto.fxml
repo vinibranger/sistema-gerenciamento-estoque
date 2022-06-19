@@ -16,8 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="br.com.vinicius.sistoque.CadastroProdutoController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.CadastroProdutoController">
    <children>
       <VBox layoutX="20.0" layoutY="20.0" prefHeight="600.0" prefWidth="250.0" style="-fx-background-color: #004aad;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -29,7 +28,7 @@
                   <Insets left="35.0" top="50.0" />
                </VBox.margin>
             </Button>
-            <MenuButton fx:id="menuButtonEntraSaida" contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Entrada e Saída">
+            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Entrada e Saída">
                <font>
                   <Font name="Arial Bold" size="13.0" />
                </font>
@@ -44,7 +43,7 @@
                   <Insets left="35.0" top="50.0" />
                </VBox.margin>
             </MenuButton>
-            <MenuButton fx:id="menuButtonRelaorio" contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Relatório">
+            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Relatório">
                <items>
                   <MenuItem fx:id="menuItemEmitirRelatório" mnemonicParsing="false" text="Emitir Relatório" />
                   <MenuItem fx:id="menuItemProdutoEstoque" mnemonicParsing="false" text="Produtos em Estoque" />
@@ -59,7 +58,7 @@
                   <Insets left="35.0" top="50.0" />
                </VBox.margin>
             </MenuButton>
-            <MenuButton fx:id="menuButtonCadastrar" contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Cadastrar">
+            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Cadastrar">
                <items>
                   <MenuItem fx:id="menuItemProduto" mnemonicParsing="false" text="Produto" />
                   <MenuItem fx:id="menuItemCliente" mnemonicParsing="false" text="Cliente" />
@@ -76,7 +75,7 @@
                   <Insets left="35.0" top="50.0" />
                </VBox.margin>
             </MenuButton>
-            <MenuButton fx:id="menuButtonconsultar" contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Consultar">
+            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Consultar">
                <items>
                   <MenuItem fx:id="menuItemConsutaProdutos" mnemonicParsing="false" text="Produtos" />
                   <MenuItem fx:id="menuItemConsutaClientes" mnemonicParsing="false" text="Clientes" />

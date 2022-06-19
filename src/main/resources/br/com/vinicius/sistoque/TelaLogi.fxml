@@ -28,7 +28,7 @@
                   <Font name="Arial" size="17.0" />
                </font>
             </Button>
-            <Button layoutX="27.0" layoutY="261.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="94.0" text="Cancelar">
+            <Button fx:id="buttonSair" layoutX="27.0" layoutY="261.0" mnemonicParsing="false" onAction="#botaoSair" prefHeight="32.0" prefWidth="94.0" text="Cancelar">
                <font>
                   <Font name="Arial" size="17.0" />
                </font>

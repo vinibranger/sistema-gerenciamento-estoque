@@ -32,7 +32,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <MenuButton fx:id="menuButtonEntraSaida" contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Entrada e Saída">
+            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Entrada e Saída">
                <font>
                   <Font name="Arial Bold" size="13.0" />
                </font>
@@ -50,7 +50,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MenuButton>
-            <MenuButton fx:id="menuButtonRelaorio" contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Relatório">
+            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Relatório">
                <items>
                   <MenuItem fx:id="menuItemEmitirRelatório" mnemonicParsing="false" onAction="#switchToRelatorios" text="Emitir Relatório" />
                   <MenuItem fx:id="menuItemProdutoEstoque" mnemonicParsing="false" onAction="#switchToRelatorioEstoque" text="Produtos em Estoque" />
@@ -68,7 +68,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MenuButton>
-            <MenuButton fx:id="menuButtonCadastrar" contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Cadastrar">
+            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Cadastrar">
                <items>
                   <MenuItem fx:id="menuItemProduto" mnemonicParsing="false" onAction="#switchToCadastroproduto" text="Produto" />
                   <MenuItem fx:id="menuItemCliente" mnemonicParsing="false" onAction="#switchToCadastroCliente" text="Cliente" />
@@ -88,7 +88,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MenuButton>
-            <MenuButton fx:id="menuButtonconsultar" contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Consultar">
+            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Consultar">
                <items>
                   <MenuItem fx:id="menuItemConsutaProdutos" mnemonicParsing="false" onAction="#co" text="Produtos" />
                   <MenuItem fx:id="menuItemConsutaClientes" mnemonicParsing="false" text="Clientes" />
