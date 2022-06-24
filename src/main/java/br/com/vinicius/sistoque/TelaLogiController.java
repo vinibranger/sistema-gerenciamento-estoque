@@ -29,7 +29,7 @@ public class TelaLogiController implements Initializable {
     void login() throws IOException {
         if (usuarioTextField.getText().equals("Vini")) {
             if (senhaPasswordField.getText().equals("123")) {
-                App.setRoot("telainicial");
+                App.setRoot("Principal");
             } else {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("erro");

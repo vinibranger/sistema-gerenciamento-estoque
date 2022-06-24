@@ -4,10 +4,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -18,99 +14,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.RelatoriosController">
    <children>
-      <VBox layoutX="20.0" layoutY="20.0" prefHeight="600.0" prefWidth="250.0" style="-fx-background-color: #004aad;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Button fx:id="buttonConsutaEstoq" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToMostrarEstoque" prefHeight="25.0" prefWidth="180.0" text="Consutar Estoque">
-               <font>
-                  <Font name="Arial Bold" size="13.0" />
-               </font>
-               <VBox.margin>
-                  <Insets left="35.0" top="50.0" />
-               </VBox.margin>
-            </Button>
-            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Entrada e Saída">
-               <font>
-                  <Font name="Arial Bold" size="13.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <items>
-                  <MenuItem fx:id="menuItemEntradaProtudo" mnemonicParsing="false" text="Entrada de produtos" />
-                  <MenuItem fx:id="menuItemSaidaProduto" mnemonicParsing="false" text="Saída de produtos" />
-               </items>
-               <VBox.margin>
-                  <Insets left="35.0" top="50.0" />
-               </VBox.margin>
-            </MenuButton>
-            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Relatório">
-               <items>
-                  <MenuItem fx:id="menuItemEmitirRelatório" mnemonicParsing="false" text="Emitir Relatório" />
-                  <MenuItem fx:id="menuItemProdutoEstoque" mnemonicParsing="false" text="Produtos em Estoque" />
-               </items>
-               <font>
-                  <Font name="Arial Bold" size="13.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <VBox.margin>
-                  <Insets left="35.0" top="50.0" />
-               </VBox.margin>
-            </MenuButton>
-            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Cadastrar">
-               <items>
-                  <MenuItem fx:id="menuItemProduto" mnemonicParsing="false" text="Produto" />
-                  <MenuItem fx:id="menuItemCliente" mnemonicParsing="false" text="Cliente" />
-                  <MenuItem fx:id="menuItemFuncionarios" mnemonicParsing="false" text="Funcionários" />
-                  <MenuItem fx:id="menuItemFornecedor" mnemonicParsing="false" text="Fornecedor" />
-               </items>
-               <font>
-                  <Font name="Arial Bold" size="13.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <VBox.margin>
-                  <Insets left="35.0" top="50.0" />
-               </VBox.margin>
-            </MenuButton>
-            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Consultar">
-               <items>
-                  <MenuItem fx:id="menuItemConsutaProdutos" mnemonicParsing="false" text="Produtos" />
-                  <MenuItem fx:id="menuItemConsutaClientes" mnemonicParsing="false" text="Clientes" />
-                  <MenuItem fx:id="menuItemConsutaFuncionarios" mnemonicParsing="false" text="Funcionários" />
-                  <MenuItem fx:id="menuItemConsutaFornecedor" mnemonicParsing="false" text="Fornecedor" />
-               </items>
-               <font>
-                  <Font name="Arial Bold" size="13.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <VBox.margin>
-                  <Insets left="35.0" top="50.0" />
-               </VBox.margin>
-            </MenuButton>
-            <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="25.0" prefWidth="180.0" text="Emitir Nota Físcal">
-               <font>
-                  <Font name="Arial Bold" size="13.0" />
-               </font>
-               <VBox.margin>
-                  <Insets left="35.0" top="50.0" />
-               </VBox.margin>
-            </Button>
-            <ImageView fitHeight="105.0" fitWidth="155.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
-               <image>
-                  <Image url="@CuboLogo.png" />
-               </image>
-               <VBox.margin>
-                  <Insets left="70.0" top="45.0" />
-               </VBox.margin>
-            </ImageView>
-         </children>
-      </VBox>
-      <HBox alignment="CENTER" layoutX="260.0" layoutY="10.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="551.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="500.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox alignment="CENTER" layoutX="260.0" layoutY="10.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="105.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label alignment="CENTER" prefHeight="38.0" prefWidth="405.0" text="Relatório Entrada/Saida" textAlignment="CENTER">
                <font>
@@ -122,13 +26,14 @@
             </Label>
          </children>
       </HBox>
-      <VBox layoutX="259.0" layoutY="128.0" prefHeight="400.0" prefWidth="541.0" style="-fx-background-color: FFFFFF;" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0">
+      <VBox layoutX="259.0" layoutY="128.0" prefHeight="400.0" prefWidth="541.0" style="-fx-background-color: FFFFFF;" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0">
          <children>
             <GridPane alignment="TOP_CENTER" prefHeight="183.0" prefWidth="544.0" style="-fx-background-color: #FFFFFF;">
                <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="260.0" minWidth="10.0" prefWidth="221.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="207.0" minWidth="6.0" prefWidth="172.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="148.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="398.0" minWidth="10.0" prefWidth="136.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="398.0" minWidth="10.0" prefWidth="217.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="263.0" minWidth="6.0" prefWidth="263.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="252.0" />
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -138,7 +43,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label fx:id="labelDateFim" text="Data Final" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label text="Data Final" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font name="Arial" size="13.0" />
                      </font>
@@ -146,7 +51,7 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="labelDateInicio" text="Data Inicio" GridPane.rowIndex="1">
+                  <Label text="Data Inicio" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="Arial" size="13.0" />
                      </font>
@@ -157,9 +62,9 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <DatePicker GridPane.rowIndex="2" />
                   <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="Gerar Relatório" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <DatePicker GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="Gerar Relatório" GridPane.columnIndex="3" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets left="35.0" />
                      </GridPane.margin>
@@ -176,7 +81,7 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="599.0" layoutY="554.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="72.0" text="Cancelar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="140.0">
+      <Button layoutX="599.0" layoutY="554.0" mnemonicParsing="false" onAction="#voltar" prefHeight="15.0" prefWidth="72.0" text="Voltar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="140.0">
          <font>
             <Font size="13.0" />
          </font>
