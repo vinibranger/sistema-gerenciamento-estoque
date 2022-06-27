@@ -13,9 +13,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.CadastroFuncioController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.CadastroFuncioController">
    <children>
-      <HBox alignment="CENTER" layoutX="250.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="570.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+      <HBox alignment="CENTER" layoutX="250.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="570.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label alignment="CENTER_RIGHT" prefHeight="38.0" prefWidth="334.0" text="Funcionários" HBox.hgrow="ALWAYS">
                <font>
@@ -33,7 +33,7 @@
             <Insets />
          </opaqueInsets>
       </HBox>
-      <VBox layoutX="250.0" layoutY="108.0" prefHeight="475.0" prefWidth="530.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="108.0">
+      <VBox alignment="CENTER" layoutX="179.0" layoutY="100.0" prefHeight="475.0" prefWidth="530.0" AnchorPane.topAnchor="100.0">
          <children>
             <GridPane alignment="TOP_CENTER">
               <columnConstraints>

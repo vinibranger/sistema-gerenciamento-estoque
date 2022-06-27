@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.RelatoriosController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.RelatoriosController">
    <children>
       <HBox alignment="CENTER" layoutX="260.0" layoutY="10.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="105.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -76,12 +76,7 @@
             </GridPane>
          </children>
       </VBox>
-      <Button layoutX="719.0" layoutY="551.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="65.0" text="Salvar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="35.0">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="599.0" layoutY="554.0" mnemonicParsing="false" onAction="#voltar" prefHeight="15.0" prefWidth="72.0" text="Voltar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="140.0">
+      <Button layoutX="782.0" layoutY="542.0" mnemonicParsing="false" onAction="#voltar" prefHeight="15.0" prefWidth="72.0" text="Voltar" AnchorPane.bottomAnchor="31.0" AnchorPane.rightAnchor="46.0">
          <font>
             <Font size="13.0" />
          </font>

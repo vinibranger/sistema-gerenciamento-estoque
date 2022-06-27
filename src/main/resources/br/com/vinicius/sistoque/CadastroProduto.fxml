@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.CadastroProdutoController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.CadastroProdutoController">
    <children>
       <HBox alignment="CENTER" layoutX="260.0" layoutY="10.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="550.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -32,7 +32,7 @@
             <Insets />
          </opaqueInsets>
       </HBox>
-      <VBox layoutX="260.0" layoutY="118.0" prefHeight="475.0" prefWidth="530.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="108.0">
+      <VBox alignment="CENTER" layoutX="185.0" layoutY="114.0" prefHeight="357.0" prefWidth="530.0" style="-fx-background-color: #FFFFFF;" AnchorPane.topAnchor="114.0">
          <children>
             <GridPane alignment="TOP_CENTER">
                <columnConstraints>
@@ -137,7 +137,7 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <Button mnemonicParsing="false" onAction="#voltar" prefHeight="13.0" prefWidth="72.0" text="Cancelar" GridPane.columnIndex="2" GridPane.rowIndex="10">
+                  <Button mnemonicParsing="false" onAction="#voltar" prefHeight="13.0" prefWidth="72.0" text="Voltar" GridPane.columnIndex="2" GridPane.rowIndex="10">
                      <font>
                         <Font size="13.0" />
                      </font>

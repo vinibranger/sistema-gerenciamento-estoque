@@ -32,9 +32,9 @@ public class TelaLogiController implements Initializable {
                 App.setRoot("Principal");
             } else {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("erro");
+                alert.setTitle("Errorr");
                 alert.setHeaderText(null);
-                alert.setContentText("Falha senha");
+                alert.setContentText("Senha Incorreta");
                 alert.showAndWait();
             }
 
@@ -43,8 +43,7 @@ public class TelaLogiController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Errorr");
             alert.setHeaderText(null);
-            alert.setContentText("User errado");
-
+            alert.setContentText("Usuário Incorreto");
             alert.showAndWait();
 
         }

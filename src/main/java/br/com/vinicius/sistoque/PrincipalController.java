@@ -50,9 +50,9 @@ public class PrincipalController implements Initializable {
     
     @FXML
     private void CadastroFornecedor(ActionEvent event) throws IOException {
-        Pane CadastroFornecedor = new FXMLLoader(App.class.getResource("CadastroFornecedor" + ".fxml")).load();
+        Pane CadasFornecedor = new FXMLLoader(App.class.getResource("CadasFornecedor" + ".fxml")).load();
 
-        anc_pane.getChildren().add(CadastroFornecedor);
+        anc_pane.getChildren().add(CadasFornecedor);
     }
     @FXML
     private void MostrarEstoque(ActionEvent event) throws IOException {
@@ -60,33 +60,33 @@ public class PrincipalController implements Initializable {
 
         anc_pane.getChildren().add(mostrarEstoque);
     }
-    @FXML
-    private void ConsultaFornecedor(ActionEvent event) throws IOException {
-        Pane ConsultaFornecedor = new FXMLLoader(App.class.getResource("ConsultaFornecedor" + ".fxml")).load();
-
-        anc_pane.getChildren().add(ConsultaFornecedor);
-    }
+   
     @FXML
     private void CadastroFuncio(ActionEvent event) throws IOException {
         Pane CadastroFuncio = new FXMLLoader(App.class.getResource("CadastroFuncio" + ".fxml")).load();
 
         anc_pane.getChildren().add(CadastroFuncio);
     }
+ @FXML
+    private void ConsultaFornecedor(ActionEvent event) throws IOException {
+        Pane ConsuFornecedor = new FXMLLoader(App.class.getResource("ConsuFornecedor" + ".fxml")).load();
 
+        anc_pane.getChildren().add(ConsuFornecedor);
+    }
     @FXML
-    private void ConsultarCliente(ActionEvent event) throws IOException {
+    private void ConsultaCliente(ActionEvent event) throws IOException {
         Pane ConsultarCliente = new FXMLLoader(App.class.getResource("ConsultarCliente" + ".fxml")).load();
 
         anc_pane.getChildren().add(ConsultarCliente);
     }
     @FXML
-    private void ConsultarFuncionario(ActionEvent event) throws IOException {
+    private void ConsultaFuncio(ActionEvent event) throws IOException {
         Pane ConsultarFuncionario = new FXMLLoader(App.class.getResource("ConsultarFuncionario" + ".fxml")).load();
 
         anc_pane.getChildren().add(ConsultarFuncionario);
     }
     @FXML
-    private void ConsultarProduto(ActionEvent event) throws IOException {
+    private void ConsultaProduto(ActionEvent event) throws IOException {
         Pane ConsultarProduto = new FXMLLoader(App.class.getResource("ConsultarProduto" + ".fxml")).load();
 
         anc_pane.getChildren().add(ConsultarProduto);
@@ -96,6 +96,13 @@ public class PrincipalController implements Initializable {
         Pane RelatorioEstoque = new FXMLLoader(App.class.getResource("RelatorioEstoque" + ".fxml")).load();
 
         anc_pane.getChildren().add(RelatorioEstoque);
+    }
+    
+     @FXML
+    private void RelatorioEntSai(ActionEvent event) throws IOException {
+        Pane RelatorioEntSai = new FXMLLoader(App.class.getResource("Relatorios" + ".fxml")).load();
+
+        anc_pane.getChildren().add(RelatorioEntSai);
     }
 
 

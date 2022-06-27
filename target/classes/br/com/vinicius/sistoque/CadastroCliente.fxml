@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.CadastroClienteController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.CadastroClienteController">
    <children>
-      <HBox alignment="CENTER" layoutX="260.0" layoutY="10.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="551.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="500.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox alignment="CENTER" layoutX="6.0" layoutY="7.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="551.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label alignment="CENTER" contentDisplay="TOP" prefHeight="33.0" prefWidth="365.0" text="Cliente" textAlignment="CENTER">
                <font>
@@ -26,9 +26,9 @@
             </Label>
          </children>
       </HBox>
-      <VBox layoutX="270.0" layoutY="128.0" prefHeight="480.0" prefWidth="575.0" style="-fx-background-color: FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="120.0">
+      <VBox alignment="CENTER" layoutX="150.0" layoutY="100.0" prefHeight="475.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;">
          <children>
-            <GridPane alignment="TOP_CENTER" prefWidth="540.0" style="-fx-background-color: #FFFFFF;">
+            <GridPane alignment="TOP_CENTER" prefHeight="447.0" prefWidth="563.0" style="-fx-background-color: #FFFFFF;">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="328.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="178.0" minWidth="6.0" prefWidth="70.0" />

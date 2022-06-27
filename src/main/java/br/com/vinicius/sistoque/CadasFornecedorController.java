@@ -9,23 +9,20 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 
-/**
- * FXML Controller class
- *
- * @author VINICIUS
- */
-public class ConsultaFornecedorController implements Initializable {
+public class CadasFornecedorController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-    }
-     @FXML
+     }     
+    
+    
+    
+    @FXML
+    
     private void voltar (ActionEvent event) throws IOException {
         App.setRoot("Principal");
-        
     }
-
- 
+        
+     
     
 }
