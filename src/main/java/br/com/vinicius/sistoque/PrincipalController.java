@@ -35,12 +35,7 @@ public class PrincipalController implements Initializable {
         anc_pane.getChildren().add(cadastroCliente);
     }
 
-    @FXML
-    private void CadastroEntrada(ActionEvent event) throws IOException {
-        Pane CadastroEntrada = new FXMLLoader(App.class.getResource("CadastroEntradaProduto" + ".fxml")).load();
-
-        anc_pane.getChildren().add(CadastroEntrada);
-    }
+   
     @FXML
     private void CadastroProduto(ActionEvent event) throws IOException {
         Pane CadastroProduto = new FXMLLoader(App.class.getResource("CadastroProduto" + ".fxml")).load();

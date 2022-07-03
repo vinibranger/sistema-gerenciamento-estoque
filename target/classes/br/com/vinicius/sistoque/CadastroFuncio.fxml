@@ -104,7 +104,7 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <Label text="Cidade" GridPane.rowIndex="7">
+                  <Label text="Cidade" GridPane.columnIndex="2" GridPane.rowIndex="11">
                      <font>
                         <Font name="Arial" size="13.0" />
                      </font>
@@ -112,7 +112,7 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <Label text="Cep" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                  <Label text="Número" GridPane.columnIndex="2" GridPane.rowIndex="9">
                      <font>
                         <Font name="Arial" size="13.0" />
                      </font>
@@ -128,7 +128,7 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <Label text="Bairro" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                  <Label text="Bairro" GridPane.rowIndex="11">
                      <font>
                         <Font name="Arial" size="13.0" />
                      </font>
@@ -136,7 +136,7 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <Label text="Celular" GridPane.rowIndex="11">
+                  <Label text="Telefone" GridPane.columnIndex="2" GridPane.rowIndex="7">
                      <font>
                         <Font name="Arial" size="13.0" />
                      </font>
@@ -144,15 +144,7 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <Label text="Telefone" GridPane.columnIndex="2" GridPane.rowIndex="11">
-                     <font>
-                        <Font name="Arial" size="13.0" />
-                     </font>
-                     <padding>
-                        <Insets top="20.0" />
-                     </padding>
-                  </Label>
-                  <Label text="E-mail" GridPane.rowIndex="13">
+                  <Label text="E-mail" GridPane.rowIndex="7">
                      <font>
                         <Font name="Arial" size="13.0" />
                      </font>
@@ -163,9 +155,8 @@
                   <TextField GridPane.columnIndex="2" GridPane.rowIndex="4" />
                   <TextField GridPane.rowIndex="8" />
                   <TextField GridPane.rowIndex="10" />
-                  <TextField GridPane.rowIndex="12" />
-                  <TextField GridPane.rowIndex="14" />
                   <TextField GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                  <TextField GridPane.rowIndex="12" />
                   <TextField GridPane.columnIndex="2" GridPane.rowIndex="10" />
                   <TextField GridPane.columnIndex="2" GridPane.rowIndex="8" />
                   <TextField GridPane.columnIndex="2" GridPane.rowIndex="6" />

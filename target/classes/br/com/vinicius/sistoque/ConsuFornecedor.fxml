@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.ConsuFornecedorController">
+<AnchorPane id="AnchorPane" onMouseDragExited="#remover" prefHeight="600.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.ConsuFornecedorController">
    <children>
       <HBox alignment="TOP_CENTER" layoutX="233.0" layoutY="14.0" prefHeight="100.0" prefWidth="263.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -44,6 +44,11 @@
                         <TableColumn fx:id="codFornecedorTable" prefWidth="75.0" text="Codigo" />
                         <TableColumn fx:id="nomeForneceTable" prefWidth="75.0" text="Nome" />
                         <TableColumn fx:id="cnpjFornecedorTable" prefWidth="75.0" text="CNPJ/CPF" />
+                        <TableColumn fx:id="emailFornecedorTable" prefWidth="75.0" text="E-mail" />
+                        <TableColumn fx:id="telefoneFornecedorTable" prefWidth="75.0" text="Telefone" />
+                        <TableColumn fx:id="ruaFornecedorTable" prefWidth="75.0" text="Rua" />
+                        <TableColumn fx:id="numeroFornecedorTable" prefWidth="75.0" text="Numero" />
+                        <TableColumn fx:id="bairroFornecedorTable" prefWidth="75.0" text="Bairro" />
                         <TableColumn fx:id="cidadeFornecedorTable" prefWidth="75.0" text="Cidade" />
                      </columns>
                      <columnResizePolicy>
@@ -62,6 +67,16 @@
                               <Insets top="10.0" />
                            </HBox.margin>
                         </Button>
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="38.0" prefWidth="69.0" text="Editar" textAlignment="JUSTIFY">
+                           <HBox.margin>
+                              <Insets left="300.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#remover" prefHeight="38.0" prefWidth="69.0" text="Remover" textAlignment="JUSTIFY">
+                           <HBox.margin>
+                              <Insets left="50.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
                      </children>
                   </HBox>
                </children>
@@ -71,6 +86,6 @@
             </GridPane>
          </children>
       </VBox>
-      <Button layoutX="822.0" layoutY="545.0" mnemonicParsing="false" onAction="#voltar" prefHeight="31.0" prefWidth="64.0" text="Voltar" />
+      <Button layoutX="1022.0" layoutY="545.0" mnemonicParsing="false" onAction="#voltar" prefHeight="31.0" prefWidth="64.0" text="Voltar" />
    </children>
 </AnchorPane>

@@ -20,4 +20,5 @@ public class ConsultarClienteController implements Initializable {
         App.setRoot("Principal");
         
     }
+
 }

@@ -47,9 +47,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
                   <Label text="Código" GridPane.rowIndex="1">
@@ -63,12 +60,12 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <TextField prefHeight="25.0" prefWidth="270.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <TextField fx:id="nomeClientTextField" prefHeight="25.0" prefWidth="270.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                   </TextField>
-                  <TextField prefHeight="25.0" prefWidth="270.0" GridPane.rowIndex="2">
+                  <TextField fx:id="codClientTextField" prefHeight="25.0" prefWidth="270.0" GridPane.rowIndex="2">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -89,7 +86,7 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <Label text="Cidade" GridPane.rowIndex="7">
+                  <Label text="Cidade" GridPane.rowIndex="9">
                      <font>
                         <Font name="Arial" size="13.0" />
                      </font>
@@ -97,7 +94,7 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <Label text="Cep" GridPane.rowIndex="11">
+                  <Label text="Rua" GridPane.columnIndex="2" GridPane.rowIndex="5">
                      <font>
                         <Font name="Arial" size="13.0" />
                      </font>
@@ -105,7 +102,7 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <Label text="Rua" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                  <Label text="Bairro" GridPane.columnIndex="2" GridPane.rowIndex="7">
                      <font>
                         <Font name="Arial" size="13.0" />
                      </font>
@@ -113,15 +110,7 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <Label text="Bairro" GridPane.rowIndex="9">
-                     <font>
-                        <Font name="Arial" size="13.0" />
-                     </font>
-                     <padding>
-                        <Insets top="20.0" />
-                     </padding>
-                  </Label>
-                  <Label text="Numero Endereço" GridPane.rowIndex="13">
+                  <Label text="Numero" GridPane.rowIndex="7">
                      <font>
                         <Font name="Arial" size="13.0" />
                      </font>
@@ -137,13 +126,10 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                  <TextField GridPane.rowIndex="8" />
-                  <TextField GridPane.rowIndex="10" />
-                  <TextField GridPane.rowIndex="12" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="10" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="8" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <TextField fx:id="emailClientTextField" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <TextField fx:id="cidadeClientTextField" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <TextField fx:id="bairroClientTextField" GridPane.rowIndex="8" />
+                  <TextField fx:id="ruaClientTextField" GridPane.columnIndex="2" GridPane.rowIndex="8" />
                   <Label text="CNPJ/CPF" GridPane.rowIndex="3">
                      <font>
                         <Font name="Arial" size="13.0" />
@@ -155,40 +141,15 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <TextField GridPane.rowIndex="4" />
-                  <TextField GridPane.rowIndex="6" />
-                  <Label text="Complemento" GridPane.columnIndex="2" GridPane.rowIndex="11">
-                     <padding>
-                        <Insets top="20.0" />
-                     </padding>
-                     <font>
-                        <Font name="Arial" size="13.0" />
-                     </font>
-                  </Label>
-                  <Label text="Celular" GridPane.columnIndex="2" GridPane.rowIndex="5">
-                     <font>
-                        <Font name="Arial" size="13.0" />
-                     </font>
-                     <padding>
-                        <Insets top="20.0" />
-                     </padding>
-                  </Label>
-                  <Label text="UF" GridPane.columnIndex="2" GridPane.rowIndex="7">
-                     <padding>
-                        <Insets top="20.0" />
-                     </padding>
-                     <font>
-                        <Font name="Arial" size="13.0" />
-                     </font>
-                  </Label>
-                  <TextField GridPane.rowIndex="14" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="12" />
-                  <Button fx:id="buttonVoltar" mnemonicParsing="false" onAction="#voltar" prefHeight="15.0" prefWidth="72.0" text="Voltar" GridPane.columnIndex="2" GridPane.rowIndex="14">
+                  <TextField fx:id="cnpjCpfClientTextField" GridPane.rowIndex="4" />
+                  <TextField fx:id="telefoneClientTextField" GridPane.rowIndex="6" />
+                  <TextField fx:id="numeroClientTextField" GridPane.rowIndex="10" />
+                  <Button fx:id="buttonVoltar" mnemonicParsing="false" onAction="#voltar" prefHeight="15.0" prefWidth="72.0" text="Voltar" GridPane.columnIndex="2" GridPane.rowIndex="11">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="65.0" text="Salvar" GridPane.columnIndex="2" GridPane.rowIndex="14">
+                  <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="65.0" text="Salvar" GridPane.columnIndex="2" GridPane.rowIndex="11">
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font>

@@ -11,9 +11,11 @@ C:\Users\VINICIUS\Documents\GitHub\sistema-gerenciamento-estoque\src\main\java\b
 C:\Users\VINICIUS\Documents\GitHub\sistema-gerenciamento-estoque\src\main\java\br\com\vinicius\sistoque\ConsuFornecedorController.java
 C:\Users\VINICIUS\Documents\GitHub\sistema-gerenciamento-estoque\src\main\java\br\com\vinicius\sistoque\Fornecedor.java
 C:\Users\VINICIUS\Documents\GitHub\sistema-gerenciamento-estoque\src\main\java\br\com\vinicius\sistoque\RelatoriosController.java
-C:\Users\VINICIUS\Documents\GitHub\sistema-gerenciamento-estoque\src\main\java\module-info.java
 C:\Users\VINICIUS\Documents\GitHub\sistema-gerenciamento-estoque\src\main\java\br\com\vinicius\sistoque\CadasFornecedorController.java
+C:\Users\VINICIUS\Documents\GitHub\sistema-gerenciamento-estoque\src\main\java\br\com\vinicius\sistoque\FornecedorDAO.java
+C:\Users\VINICIUS\Documents\GitHub\sistema-gerenciamento-estoque\src\main\java\br\com\vinicius\sistoque\Funcionario.java
 C:\Users\VINICIUS\Documents\GitHub\sistema-gerenciamento-estoque\src\main\java\br\com\vinicius\sistoque\ConsultarProdutoController.java
 C:\Users\VINICIUS\Documents\GitHub\sistema-gerenciamento-estoque\src\main\java\br\com\vinicius\sistoque\PrincipalController.java
 C:\Users\VINICIUS\Documents\GitHub\sistema-gerenciamento-estoque\src\main\java\br\com\vinicius\sistoque\CadastroClienteController.java
 C:\Users\VINICIUS\Documents\GitHub\sistema-gerenciamento-estoque\src\main\java\br\com\vinicius\sistoque\Produto.java
+C:\Users\VINICIUS\Documents\GitHub\sistema-gerenciamento-estoque\src\main\java\br\com\vinicius\sistoque\ConnectionSingleton.java
