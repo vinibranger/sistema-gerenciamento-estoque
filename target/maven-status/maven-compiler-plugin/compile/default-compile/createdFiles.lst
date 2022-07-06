@@ -1,6 +1,5 @@
 br\com\vinicius\sistoque\ConsultarFuncionarioController.class
 br\com\vinicius\sistoque\Funcionario.class
-br\com\vinicius\sistoque\Produto.class
 br\com\vinicius\sistoque\CadastroFuncioController.class
 br\com\vinicius\sistoque\CadastroClienteController.class
 br\com\vinicius\sistoque\PrincipalController.class

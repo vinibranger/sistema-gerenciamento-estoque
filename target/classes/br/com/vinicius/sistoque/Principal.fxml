@@ -109,7 +109,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="293.0" prefWidth="437.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <ImageView fitHeight="293.0" fitWidth="316.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imglogo" fitHeight="293.0" fitWidth="316.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@LogoNome.png" />
                      </image>

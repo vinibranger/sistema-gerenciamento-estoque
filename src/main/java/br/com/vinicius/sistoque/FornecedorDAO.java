@@ -7,7 +7,7 @@ import java.util.List;
 
 public class FornecedorDAO {
 
-    public Fornecedor getByCodigo(int id) {
+    public Fornecedor getCodigo(int id) {
         try {
             Connection connection = ConnectionSingleton.getConnection();
             ResultSet resultadoFornecedor = connection. //
@@ -42,18 +42,18 @@ public class FornecedorDAO {
             while (!resultadoFornecedor.isLast()) {
                 resultadoFornecedor.next();
 
-               int id_fornecedor = resultadoFornecedor.getInt("codigoForne");
-                String nome = resultadoFornecedor.getString("nomeForne");
-                String cnpj_cpf = resultadoFornecedor.getString("cnpjforne");
+                int codigoForne = resultadoFornecedor.getInt("id_fornecedor");
+                String nomeForne = resultadoFornecedor.getString("nome");
+                String cnpjForne = resultadoFornecedor.getString("cnpj_cpf");
                 String email = resultadoFornecedor.getString("email");
                 String telefone = resultadoFornecedor.getString("telefone");
                 String rua = resultadoFornecedor.getString("rua");
-                String num_endereco = resultadoFornecedor.getString("numero");
+                String numero = resultadoFornecedor.getString("num_endereco");
                 String bairro = resultadoFornecedor.getString("bairro");
                 String cidade = resultadoFornecedor.getString("cidade");
 
-                Fornecedor FornecedorObterDoBanco = new Fornecedor(id_fornecedor, nome, //
-                        cnpj_cpf, email, telefone, rua, num_endereco, bairro, cidade);
+                Fornecedor FornecedorObterDoBanco = new Fornecedor(codigoForne, nomeForne, //
+                        cnpjForne, email, telefone, rua, numero, bairro, cidade);
                 resultadoTodosOsFornecedor.add(FornecedorObterDoBanco);
             }
             return resultadoTodosOsFornecedor;
@@ -62,30 +62,76 @@ public class FornecedorDAO {
         }
     }
 
-    public void save(Fornecedor novoFornecedor) {
+    public void salvar(Fornecedor novoForne) {
         try {
             Connection connection = ConnectionSingleton.getConnection();
             connection.createStatement(). //
-                    executeUpdate("INSERT INTO produto values (" //
-                            + novoFornecedor.codigoForne //
-                            + ", '" + novoFornecedor.nomeForne + "'" //
-                            + ", '" + novoFornecedor.cnpjforne + "'" //
-                            + ", '" + novoFornecedor.email + "'" //
-                            + ", '" + novoFornecedor.telefone + "'" //
-                            + ", '" + novoFornecedor.rua + "'" //
-                            + ", '" + novoFornecedor.numero + "'" //       
-                            + ", '" + novoFornecedor.bairro + "'" //                              
-                            + ", " + novoFornecedor.cidade + ")");
+                    executeUpdate("INSERT INTO fornecedor values (" //
+                            + novoForne.getCodigoForne() //
+                            + ", '" + novoForne.getNomeForne() + "'" //
+                            + ", '" + novoForne.getCnpjForne() + "'" //
+                            + ", '" + novoForne.getEmail() + "'" //
+                            + ", '" + novoForne.getTelefone() + "'" //
+                            + ", '" + novoForne.getRua() + "'" //
+                            + ", '" + novoForne.getNumero() + "'" //
+                            + ", '" + novoForne.getBairro() + "'" //
+                            + ", " + novoForne.getCidade() + ")");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void update(Fornecedor fornecedorEditado) {
+        try {
+            Connection connection = ConnectionSingleton.getConnection();
+            connection.createStatement(). //
+                    executeUpdate("UPDATE produto SET " //
+                            + "nome = '" + fornecedorEditado.getNomeForne() + "'" //
+                            + "cnpj_cpf = '" + fornecedorEditado.getCnpjForne() + "'" //
+                            + "email = '" + fornecedorEditado.getEmail() + "'" //
+                            + "telefone = '" + fornecedorEditado.getTelefone() + "'" //
+                            + "rua = '" + fornecedorEditado.getRua() + "'" //
+                            + "num_endereco = '" + fornecedorEditado.getNumero() + "'" //
+                            + "bairro = '" + fornecedorEditado.getBairro() + "'" //
+                            + ", cidade = " + fornecedorEditado.getCidade() //
+                            + " WHERE codigo = " + fornecedorEditado.getCodigoForne() //
+                    );
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     public void delete(Fornecedor fornecedorParaRemover) {
         try {
             Connection connection = ConnectionSingleton.getConnection();
             connection.createStatement(). //
-                    executeUpdate("DELETE FROM produto where codigo = " + fornecedorParaRemover.codigoForne);
+                    executeUpdate("DELETE FROM produto where codigo = " + fornecedorParaRemover.getCodigoForne());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static Fornecedor getnome(String nomeForne) {
+        try {
+            Connection connection = ConnectionSingleton.getConnection();
+            ResultSet resultadoFornecedor = connection. //
+                    createStatement(). //
+                    executeQuery("SELECT * FROM fornecedor WHERE id_fornecedor = " + nomeForne);
+
+            resultadoFornecedor.next();
+            int id_fornecedor = resultadoFornecedor.getInt("codigoForne");
+            String nome = resultadoFornecedor.getString("nomeForne");
+            String cnpj_cpf = resultadoFornecedor.getString("cnpjforne");
+            String email = resultadoFornecedor.getString("email");
+            String telefone = resultadoFornecedor.getString("telefone");
+            String rua = resultadoFornecedor.getString("rua");
+            String num_endereco = resultadoFornecedor.getString("numero");
+            String bairro = resultadoFornecedor.getString("bairro");
+            String cidade = resultadoFornecedor.getString("cidade");
+
+            return new Fornecedor(id_fornecedor, nome, cnpj_cpf, email, telefone, rua, num_endereco, bairro, cidade);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

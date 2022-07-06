@@ -24,7 +24,7 @@ public class ConsuFornecedorController implements Initializable {
     private TableColumn<Fornecedor, String> cidadeFornecedorTable;
 
     @FXML
-    private TableColumn<Fornecedor, String> cnpjFornecedorTable;
+    private TableColumn<Fornecedor, String> cnpjForneTable;
 
     @FXML
     private TableColumn<Fornecedor, Integer> codFornecedorTable;
@@ -47,14 +47,14 @@ public class ConsuFornecedorController implements Initializable {
     @FXML
     private TableView<Fornecedor> tableFornecedorEstoque;
 
-    public ObservableList<Fornecedor> fornecedores;
+    public static ObservableList<Fornecedor> fornecedores;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         this.codFornecedorTable.setCellValueFactory(new PropertyValueFactory<>("codigoForne"));
         this.nomeForneceTable.setCellValueFactory(new PropertyValueFactory<>("nomeForne"));
-        this.cnpjFornecedorTable.setCellValueFactory(new PropertyValueFactory<>("cnpjForne"));
+        this.cnpjForneTable.setCellValueFactory(new PropertyValueFactory<>("cnpjForne"));
         this.emailFornecedorTable.setCellValueFactory(new PropertyValueFactory<>("email"));
         this.telefoneFornecedorTable.setCellValueFactory(new PropertyValueFactory<>("telefone"));
         this.ruaFornecedorTable.setCellValueFactory(new PropertyValueFactory<>("rua"));

@@ -43,7 +43,7 @@
                      <columns>
                         <TableColumn fx:id="codFornecedorTable" prefWidth="75.0" text="Codigo" />
                         <TableColumn fx:id="nomeForneceTable" prefWidth="75.0" text="Nome" />
-                        <TableColumn fx:id="cnpjFornecedorTable" prefWidth="75.0" text="CNPJ/CPF" />
+                        <TableColumn fx:id="cnpjForneTable" prefWidth="75.0" text="CNPJ/CPF" />
                         <TableColumn fx:id="emailFornecedorTable" prefWidth="75.0" text="E-mail" />
                         <TableColumn fx:id="telefoneFornecedorTable" prefWidth="75.0" text="Telefone" />
                         <TableColumn fx:id="ruaFornecedorTable" prefWidth="75.0" text="Rua" />

@@ -2,77 +2,74 @@
 package br.com.vinicius.sistoque;
 
 public class Produto {
-    int codigo;
-    String nome;
-    String localEst;
-    String marca;
-    String codeBarra;
-    String descriProdu;
+    
+    int codigo, quantidade;
+    String nome, unidade,localEstoque,descricao,fornecedor;
 
-    public void setCodigo(int codigo) {
+    public Produto(int codigo, int quantidade, String nome, String unidade, String localEstoque, String descricao, String fornecedor) {
         this.codigo = codigo;
-    }
-
-    public void setNome(String nome) {
+        this.quantidade = quantidade;
         this.nome = nome;
-    }
-
-    public void setLocalEst(String localEst) {
-        this.localEst = localEst;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public void setCodeBarra(String codeBarra) {
-        this.codeBarra = codeBarra;
-    }
-
-    public void setDescriProdu(String descriProdu) {
-        this.descriProdu = descriProdu;
+        this.unidade = unidade;
+        this.localEstoque = localEstoque;
+        this.descricao = descricao;
+        this.fornecedor = fornecedor;
     }
 
     public int getCodigo() {
         return codigo;
     }
 
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
     public String getNome() {
         return nome;
     }
 
-    public String getLocalEst() {
-        return localEst;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public String getCodeBarra() {
-        return codeBarra;
-    }
-
-    public String getDescriProdu() {
-        return descriProdu;
-    }
-
-    public Produto(int codigo, String nome, String localEst, String marca, String codeBarra, String descriProdu) {
-        this.codigo = codigo;
+    public void setNome(String nome) {
         this.nome = nome;
-        this.localEst = localEst;
-        this.marca = marca;
-        this.codeBarra = codeBarra;
-        this.descriProdu = descriProdu;
     }
 
-    
-    
+    public String getUnidade() {
+        return unidade;
+    }
 
-    
-    
+    public void setUnidade(String unidade) {
+        this.unidade = unidade;
+    }
 
- 
-    
+    public String getLocalEstoque() {
+        return localEstoque;
+    }
+
+    public void setLocalEstoque(String localEstoque) {
+        this.localEstoque = localEstoque;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getFornecedor() {
+        return fornecedor;
+    }
+
+    public void setFornecedor(String fornecedor) {
+        this.fornecedor = fornecedor;
+    }
     
 }

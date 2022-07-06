@@ -17,7 +17,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("TelaLogi"));
+        scene = new Scene(loadFXML("TelaLogi"), 750, 400);
         stage.setScene(scene);
         stage.show();
        // stage.setResizable(false);

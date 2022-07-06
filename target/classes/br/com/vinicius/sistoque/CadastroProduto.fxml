@@ -65,12 +65,12 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <TextField prefHeight="25.0" prefWidth="270.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <TextField fx:id="nomeTextField" prefHeight="25.0" prefWidth="270.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                   </TextField>
-                  <TextField prefHeight="25.0" prefWidth="270.0" GridPane.rowIndex="2">
+                  <TextField fx:id="codigoTextField" prefHeight="25.0" prefWidth="270.0" GridPane.rowIndex="2">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -99,9 +99,9 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <TextField GridPane.rowIndex="4" />
-                  <TextField GridPane.rowIndex="8" />
-                  <TextField GridPane.rowIndex="6" />
+                  <TextField fx:id="quantidadeTextField" GridPane.rowIndex="4" />
+                  <TextField fx:id="descriçaoTextField" GridPane.rowIndex="8" />
+                  <TextField fx:id="localEstoqueTextField" GridPane.rowIndex="6" />
                   <Label text="Descrição" GridPane.rowIndex="7">
                      <font>
                         <Font name="Arial" size="13.0" />
@@ -129,7 +129,7 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <ComboBox fx:id="fornecedorCombox" onAction="#selectFornecedor" prefHeight="25.0" prefWidth="243.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <ComboBox fx:id="fornecedorCombox" onAction="#selectForne" prefHeight="25.0" prefWidth="243.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
                   <Label text="Fornecedor" GridPane.columnIndex="2" GridPane.rowIndex="5">
                      <font>
                         <Font name="Arial" size="13.0" />

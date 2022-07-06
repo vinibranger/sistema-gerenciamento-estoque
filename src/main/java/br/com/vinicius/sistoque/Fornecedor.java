@@ -2,11 +2,11 @@ package br.com.vinicius.sistoque;
 
 public class Fornecedor {
 
-    public Fornecedor(int codigoForne, String nomeForne, String cnpjforne,// 
+    public Fornecedor(int codigoForne, String nomeForne, String cnpjForne,// 
             String email, String telefone, String rua, String numero, String bairro, String cidade) {
         this.codigoForne = codigoForne;
         this.nomeForne = nomeForne;
-        this.cnpjforne = cnpjforne;
+        this.cnpjForne = cnpjForne;
         this.email = email;
         this.telefone = telefone;
         this.rua = rua;
@@ -16,7 +16,7 @@ public class Fornecedor {
 
     }
     int codigoForne;
-    String nomeForne, cnpjforne, email, telefone, rua, numero, bairro, cidade;
+    String nomeForne, cnpjForne, email, telefone, rua, numero, bairro, cidade;
 
     public void setCodigoForne(int codigoForne) {
         this.codigoForne = codigoForne;
@@ -26,8 +26,8 @@ public class Fornecedor {
         this.nomeForne = nomeForne;
     }
 
-    public void setCnpjforne(String cnpjforne) {
-        this.cnpjforne = cnpjforne;
+    public void setCnpjForne(String cnpjForne) {
+        this.cnpjForne = cnpjForne;
     }
 
     public void setEmail(String email) {
@@ -62,8 +62,8 @@ public class Fornecedor {
         return nomeForne;
     }
 
-    public String getCnpjforne() {
-        return cnpjforne;
+    public String getCnpjForne() {
+        return cnpjForne;
     }
 
     public String getEmail() {

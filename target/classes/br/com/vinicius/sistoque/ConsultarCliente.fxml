@@ -27,21 +27,18 @@
                   <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <TableView fx:id="tableProdutoEstoque" prefHeight="311.0" prefWidth="456.0" GridPane.rowIndex="1">
+                  <TableView fx:id="tableCliente" prefHeight="311.0" prefWidth="456.0" GridPane.rowIndex="1">
                      <columns>
-                        <TableColumn fx:id="codProdutoTable" prefWidth="75.0" text="Codigo" />
-                        <TableColumn fx:id="quantProdutoTable" prefWidth="75.0" text="Nome" />
-                        <TableColumn fx:id="nomeProdutoTable" prefWidth="75.0" text="CNPJ/CPF" />
-                        <TableColumn prefWidth="75.0" text="E-mail" />
-                        <TableColumn prefWidth="75.0" text="Telefone" />
-                        <TableColumn fx:id="nomeProdutoTable1" prefWidth="75.0" text="Cidade" />
-                        <TableColumn prefWidth="90.0" text="Bairro" />
-                        <TableColumn prefWidth="75.0" text="Rua" />
-                        <TableColumn prefWidth="75.0" text="Numero" />
+                        <TableColumn fx:id="codCliente" prefWidth="69.0" text="Codigo" />
+                        <TableColumn fx:id="nomeCliente" prefWidth="196.0" text="Nome" />
+                        <TableColumn fx:id="cnpj_cpfCliente" prefWidth="86.0" text="CNPJ/CPF" />
+                        <TableColumn fx:id="emailCliente" prefWidth="200.0" text="E-mail" />
+                        <TableColumn fx:id="telefoneCliente" prefWidth="123.0" text="Telefone" />
+                        <TableColumn fx:id="ruaCliente" prefWidth="82.0" text="Rua" />
+                        <TableColumn fx:id="numeroCliente" prefWidth="79.0" text="Numero" />
+                        <TableColumn fx:id="bairroCliente" prefWidth="109.0" text="Bairro" />
+                        <TableColumn fx:id="cidadeCliente" prefWidth="127.0" text="Cidade" />
                      </columns>
-                     <columnResizePolicy>
-                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                     </columnResizePolicy>
                   </TableView>
                   <HBox prefHeight="60.0" prefWidth="536.0">
                      <children>
@@ -86,6 +83,6 @@
             </Label>
          </children>
       </HBox>
-      <Button layoutX="532.0" layoutY="561.0" mnemonicParsing="false" onAction="#voltar" prefHeight="35.0" prefWidth="57.0" text="Voltar" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="11.0" />
+      <Button layoutX="1028.0" layoutY="541.0" mnemonicParsing="false" onAction="#voltar" prefHeight="35.0" prefWidth="57.0" text="Voltar" AnchorPane.bottomAnchor="24.0" AnchorPane.rightAnchor="115.0" />
    </children>
 </AnchorPane>

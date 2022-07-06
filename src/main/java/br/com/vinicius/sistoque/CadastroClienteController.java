@@ -1,6 +1,7 @@
 
 package br.com.vinicius.sistoque;
 
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,7 +17,7 @@ public class CadastroClienteController implements Initializable {
  
     
     @FXML
-    private Button buttonVoltar;
+    private static Button buttonVoltar;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -25,6 +26,7 @@ public class CadastroClienteController implements Initializable {
     @FXML
     private void voltar (ActionEvent event) throws IOException {
         App.setRoot("Principal");
+        
     }
     
     

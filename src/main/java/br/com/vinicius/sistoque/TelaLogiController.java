@@ -11,6 +11,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 public class TelaLogiController implements Initializable {
     @FXML
@@ -27,9 +28,12 @@ public class TelaLogiController implements Initializable {
 
     @FXML
     void login() throws IOException {
+       
+        
         if (usuarioTextField.getText().equals("Vini")) {
             if (senhaPasswordField.getText().equals("123")) {
                 App.setRoot("Principal");
+                
             } else {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Errorr");

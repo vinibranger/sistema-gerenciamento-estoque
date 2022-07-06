@@ -24,7 +24,7 @@
       </HBox>
       <HBox alignment="CENTER" layoutY="206.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <TextField promptText="Código" style="-fx-border-color: #000000;">
+            <TextField fx:id="codigProduTxtField" editable="false" promptText="Código" style="-fx-border-color: #000000;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -34,8 +34,11 @@
                <HBox.margin>
                   <Insets right="20.0" />
                </HBox.margin>
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
             </TextField>
-            <TextField promptText="Nome" style="-fx-border-color: #000000;">
+            <TextField fx:id="nomeProduTxtField" editable="false" promptText="Nome" style="-fx-border-color: #000000;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -45,8 +48,11 @@
                <HBox.margin>
                   <Insets right="20.0" />
                </HBox.margin>
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
             </TextField>
-            <TextField promptText="Quantidade" style="-fx-border-color: #000000;">
+            <TextField fx:id="quantidadeProduTxtField" promptText="Quantidade" style="-fx-border-color: #000000;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -56,8 +62,11 @@
                <HBox.margin>
                   <Insets right="20.0" />
                </HBox.margin>
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
             </TextField>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #008000; -fx-border-color: #000000;" text="Adicionar">
+            <Button mnemonicParsing="false" onAction="#salvar" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #008000; -fx-border-color: #000000;" text="Adicionar">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
