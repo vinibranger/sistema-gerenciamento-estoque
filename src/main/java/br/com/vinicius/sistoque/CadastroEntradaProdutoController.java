@@ -11,7 +11,6 @@ import javafx.scene.control.TextField;
 public class CadastroEntradaProdutoController implements Initializable {
 
     public int quantidaOriginal;
-    public  int quantidaInicial=0;
     public static Produto produto;
     @FXML
     private TextField codigProduTxtField;
@@ -24,12 +23,9 @@ public class CadastroEntradaProdutoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-       
-        
-        
+    quantidadeProduTxtField.setText(null);
         if (produto != null) {
-             quantidaInicial=Integer.parseInt(quantidadeProduTxtField.getText());
+           
             codigProduTxtField.setText(Integer.toString(produto.getCodigo()));
             nomeProduTxtField.setText(produto.getNome());
             quantidadeProduTxtField.setText(Integer.toString(produto.getQuantidade()));
@@ -40,9 +36,21 @@ public class CadastroEntradaProdutoController implements Initializable {
     }
 
     @FXML
-    private void salvar(ActionEvent event) throws IOException {
+    private void addEstoque(ActionEvent event) throws IOException {
 
         int novaQuantidade = quantidaOriginal + Integer.parseInt(quantidadeProduTxtField.getText());
+
+        produto.setQuantidade(novaQuantidade);
+        ProdutoDAO dao = new ProdutoDAO();
+        dao.update(produto);
+
+        App.setRoot("Principal");
+
+    }
+    @FXML
+    private void saidaEstoque(ActionEvent event) throws IOException {
+
+        int novaQuantidade = quantidaOriginal - Integer.parseInt(quantidadeProduTxtField.getText());
 
         produto.setQuantidade(novaQuantidade);
         ProdutoDAO dao = new ProdutoDAO();

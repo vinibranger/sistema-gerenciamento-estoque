@@ -67,7 +67,7 @@ public class ClienteDAO {
         }
     }
 
-    public void save(Cliente novoCliente) {
+    public void salvar(Cliente novoCliente) {
         try {
             Connection connection = ConnectionSingleton.getConnection();
             connection.createStatement(). //

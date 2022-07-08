@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.CadastroEntradaProdutoController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.CadastroEntradaProdutoController">
    <children>
       <HBox alignment="CENTER" layoutX="270.0" layoutY="20.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="551.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="500.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -22,80 +22,76 @@
             </Label>
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutY="206.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-         <children>
-            <TextField fx:id="codigProduTxtField" editable="false" promptText="Código" style="-fx-border-color: #000000;">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-               <HBox.margin>
-                  <Insets right="20.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="Arial Black" size="13.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="nomeProduTxtField" editable="false" promptText="Nome" style="-fx-border-color: #000000;">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-               <HBox.margin>
-                  <Insets right="20.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="Arial Black" size="13.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="quantidadeProduTxtField" promptText="Quantidade" style="-fx-border-color: #000000;">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-               <HBox.margin>
-                  <Insets right="20.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="Arial Black" size="13.0" />
-               </font>
-            </TextField>
-            <Button mnemonicParsing="false" onAction="#salvar" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #008000; -fx-border-color: #000000;" text="Adicionar">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-               <font>
-                  <Font name="Arial Black" size="12.0" />
-               </font>
-               <HBox.margin>
-                  <Insets right="30.0" top="150.0" />
-               </HBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #FF0000; -fx-border-color: #000000;" text="Saida">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-               <font>
-                  <Font name="Arial Black" size="12.0" />
-               </font>
-               <HBox.margin>
-                  <Insets right="30.0" top="150.0" />
-               </HBox.margin>
-            </Button>
-         </children>
-      </HBox>
-      <Button layoutX="818.0" layoutY="550.0" mnemonicParsing="false" onAction="#voltar" prefHeight="29.0" prefWidth="55.0" text="Voltar" />
+      <Button alignment="CENTER" layoutX="508.0" layoutY="495.0" mnemonicParsing="false" onAction="#voltar" prefHeight="29.0" prefWidth="55.0" text="Voltar" />
+      <TextField fx:id="codigProduTxtField" alignment="CENTER" editable="false" layoutX="312.0" layoutY="248.0" style="-fx-border-color: #000000;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </TextField>
+      <TextField fx:id="nomeProduTxtField" alignment="CENTER" editable="false" layoutX="312.0" layoutY="155.0" style="-fx-border-color: #000000;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </TextField>
+      <TextField fx:id="quantidadeProduTxtField" alignment="CENTER" layoutX="312.0" layoutY="328.0" style="-fx-border-color: #000000;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </TextField>
+      <Button alignment="CENTER" layoutX="267.0" layoutY="401.0" mnemonicParsing="false" onAction="#addEstoque" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #008000; -fx-border-color: #000000;" text="Adicionar">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="445.0" layoutY="401.0" mnemonicParsing="false" onAction="#saidaEstoque" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #FF0000; -fx-border-color: #000000;" text="Saida">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="375.0" layoutY="134.0" text="Nome">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="370.0" layoutY="227.0" text="Código">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="351.0" layoutY="307.0" text="Quantidade">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

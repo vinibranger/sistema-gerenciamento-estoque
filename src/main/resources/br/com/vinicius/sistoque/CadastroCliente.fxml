@@ -127,9 +127,9 @@
                      </padding>
                   </Label>
                   <TextField fx:id="emailClientTextField" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                  <TextField fx:id="cidadeClientTextField" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                  <TextField fx:id="bairroClientTextField" GridPane.rowIndex="8" />
-                  <TextField fx:id="ruaClientTextField" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                  <TextField fx:id="cidadeClientTextField" GridPane.rowIndex="10" />
+                  <TextField fx:id="bairroClientTextField" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                  <TextField fx:id="ruaClientTextField" GridPane.columnIndex="2" GridPane.rowIndex="6" />
                   <Label text="CNPJ/CPF" GridPane.rowIndex="3">
                      <font>
                         <Font name="Arial" size="13.0" />
@@ -143,7 +143,7 @@
                   </Label>
                   <TextField fx:id="cnpjCpfClientTextField" GridPane.rowIndex="4" />
                   <TextField fx:id="telefoneClientTextField" GridPane.rowIndex="6" />
-                  <TextField fx:id="numeroClientTextField" GridPane.rowIndex="10" />
+                  <TextField fx:id="numeroClientTextField" GridPane.rowIndex="8" />
                   <Button fx:id="buttonVoltar" mnemonicParsing="false" onAction="#voltar" prefHeight="15.0" prefWidth="72.0" text="Voltar" GridPane.columnIndex="2" GridPane.rowIndex="11">
                      <font>
                         <Font size="13.0" />
