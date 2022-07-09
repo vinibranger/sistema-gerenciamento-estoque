@@ -23,14 +23,14 @@ public class CadastroEntradaProdutoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    quantidadeProduTxtField.setText(null);
+   
         if (produto != null) {
-           
+            
             codigProduTxtField.setText(Integer.toString(produto.getCodigo()));
             nomeProduTxtField.setText(produto.getNome());
             quantidadeProduTxtField.setText(Integer.toString(produto.getQuantidade()));
             quantidaOriginal = produto.getQuantidade();
-
+            quantidadeProduTxtField.setText(null);//mostar vazio na tela
         }
 
     }

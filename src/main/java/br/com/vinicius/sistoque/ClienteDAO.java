@@ -17,17 +17,17 @@ public class ClienteDAO {
             resultadoCliente.next();
             int codigoCliente = resultadoCliente.getInt("idcliente");
             String nome = resultadoCliente.getString("nome");
-            String cnpjCpf = resultadoCliente.getString("cnpj_cpf");
+            int cnpjCpf = resultadoCliente.getInt("cnpj_cpf");
             String email = resultadoCliente.getString("email");
-            String telefone = resultadoCliente.getString("telefone");
+            int telefone = resultadoCliente.getInt("telefone");
             String rua = resultadoCliente.getString("rua");
-            String numeEndereco = resultadoCliente.getString("numero_endereco");
+            int numeEndereco = resultadoCliente.getInt("num_endereco");
             String bairro = resultadoCliente.getString("bairro");
             String cidade = resultadoCliente.getString("cidade");
 
-            return new Cliente(codigoCliente, nome, cnpjCpf, email, telefone, rua//
-                    ,
-                     numeEndereco, bairro, cidade);
+            return new Cliente(codigoCliente, cnpjCpf, telefone, numeEndereco,//
+                  nome,email,rua,bairro,cidade);
+                    
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -47,17 +47,16 @@ public class ClienteDAO {
 
                 int codigoCliente = resultadoCliente.getInt("idcliente");
                 String nome = resultadoCliente.getString("nome");
-                String cnpjCpf = resultadoCliente.getString("cnpj_cpf");
+                int cnpjCpf = resultadoCliente.getInt("cnpj_cpf");
                 String email = resultadoCliente.getString("email");
-                String telefone = resultadoCliente.getString("telefone");
+                int telefone = resultadoCliente.getInt("telefone");
                 String rua = resultadoCliente.getString("rua");
-                String numeEndereco = resultadoCliente.getString("num_endereco");
+                int numeEndereco = resultadoCliente.getInt("num_endereco");
                 String bairro = resultadoCliente.getString("bairro");
                 String cidade = resultadoCliente.getString("cidade");
 
-                Cliente ClienteObterDoBanco = new Cliente(codigoCliente, nome, cnpjCpf, email, telefone, rua//
-                        ,
-                         numeEndereco, bairro, cidade);
+                Cliente ClienteObterDoBanco = new Cliente(codigoCliente, numeEndereco, cnpjCpf, telefone, nome,//
+                        email, rua, bairro, cidade);
                 resultadoTodosCliente.add(ClienteObterDoBanco);
             }
 
@@ -107,7 +106,8 @@ public class ClienteDAO {
         }
 
     }
- public void delete(Cliente clienteRemover) {
+
+    public void delete(Cliente clienteRemover) {
         try {
             Connection connection = ConnectionSingleton.getConnection();
             connection.createStatement(). //

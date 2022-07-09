@@ -63,7 +63,7 @@ public class ProdutoDAO {
     }
 
   
-    public void save(Produto novoProduto) {
+    public void salvar(Produto novoProduto) {
         try {
             Connection connection = ConnectionSingleton.getConnection();
             connection.createStatement(). //
@@ -116,8 +116,7 @@ public class ProdutoDAO {
             Connection connection = ConnectionSingleton.getConnection();
             connection.createStatement(). //
                     executeUpdate("UPDATE produto SET " //
-                            + "nome = '" + produtoEntraSai.getNome() + "'" //
-                            + ",quantidade = '" + produtoEntraSai.getQuantidade() + "'" //
+                            + "quantidade = '" + produtoEntraSai.getQuantidade() + "'" //
                             + " WHERE cod_produ = " + produtoEntraSai.getCodigo() //
                     );
         } catch (Exception e) {

@@ -1,6 +1,5 @@
 package br.com.vinicius.sistoque;
 
-import static br.com.vinicius.sistoque.CadasFornecedorController.fornecedor;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -63,18 +62,17 @@ public class CadastroClienteController implements Initializable {
                 && !this.cnpjCpfClientTextField.getText().isEmpty() //
                 && !this.cidadeClientTextField.getText().isEmpty() //
                 && !this.bairroClientTextField.getText().isEmpty()) {
-                
-            cliente=new Cliente(//
+
+            cliente = new Cliente(//
                     Integer.parseInt(this.codClientTextField.getText()), // 
-                    this.telefoneClientTextField.getText(), //
+                    Integer.parseInt(this.telefoneClientTextField.getText()), //
+                    Integer.parseInt(this.cnpjCpfClientTextField.getText()),//
+                    Integer.parseInt(this.numeroClientTextField.getText()), //
                     this.ruaClientTextField.getText(), //
-                    this.numeroClientTextField.getText(), //
                     this.nomeClientTextField.getText(), //
                     this.emailClientTextField.getText(), //
-                    this.cnpjCpfClientTextField.getText(), //
                     this.cidadeClientTextField.getText(), //
                     this.bairroClientTextField.getText());
-                        
 
             ClienteDAO daoDoCliente = new ClienteDAO();
             daoDoCliente.salvar(cliente);
@@ -95,7 +93,7 @@ public class CadastroClienteController implements Initializable {
             this.cnpjCpfClientTextField.setText(null);
             this.cidadeClientTextField.setText(null);
             this.bairroClientTextField.setText(null);
-            
+
         } else {
             App.setRoot("Principal");
         }

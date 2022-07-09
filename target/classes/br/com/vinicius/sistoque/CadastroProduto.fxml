@@ -115,7 +115,7 @@
                         <Font size="13.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="65.0" text="Salvar" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                  <Button mnemonicParsing="false" onAction="#salvar" prefHeight="47.0" prefWidth="65.0" text="Salvar" GridPane.columnIndex="2" GridPane.rowIndex="9">
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font>
@@ -123,13 +123,11 @@
                         <Insets left="150.0" />
                      </GridPane.margin>
                   </Button>
-                  <ComboBox fx:id="comboxUnidadeProduto" onAction="#select" prefHeight="25.0" prefWidth="240.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                   <Label text="Unidade" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <padding>
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <ComboBox fx:id="fornecedorCombox" onAction="#selectForne" prefHeight="25.0" prefWidth="243.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
                   <Label text="Fornecedor" GridPane.columnIndex="2" GridPane.rowIndex="5">
                      <font>
                         <Font name="Arial" size="13.0" />
@@ -138,6 +136,8 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
+                  <TextField fx:id="unidadeTextField" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <ComboBox fx:id="fornecedorcombo" prefHeight="25.0" prefWidth="249.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
                </children>
             </GridPane>
          </children>

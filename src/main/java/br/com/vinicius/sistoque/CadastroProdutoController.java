@@ -1,15 +1,9 @@
 package br.com.vinicius.sistoque;
 
-import static br.com.vinicius.sistoque.CadasFornecedorController.fornecedor;
-import static br.com.vinicius.sistoque.FornecedorDAO.getnome;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import static java.util.Collections.list;
 import java.util.Optional;
 import java.util.ResourceBundle;
-import javafx.beans.value.ObservableListValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,16 +13,15 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.util.StringConverter;
 
 public class CadastroProdutoController implements Initializable {
 
     public static Produto produto;
-     public static Cliente cliente;
-    @FXML
-    private ComboBox comboxUnidadeProduto;
-    @FXML
-    private ComboBox fornecedorCombox;
+    public static Fornecedor fornecedor;
 
+    @FXML
+    private ComboBox<Fornecedor> fornecedorcombo;
     @FXML
     private TextField codigoTextField;
     @FXML
@@ -39,76 +32,59 @@ public class CadastroProdutoController implements Initializable {
     private TextField nomeTextField;
     @FXML
     private TextField quantidadeTextField;
-
     @FXML
-    void select(ActionEvent event) {
-        String unidadeProduto = comboxUnidadeProduto.getSelectionModel().getSelectedItem().toString();
-        String Foner = comboxUnidadeProduto.getSelectionModel().getSelectedItem().toString();
-    }
+    private TextField unidadeTextField;
+    
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        ObservableList<String> unidade = FXCollections.observableArrayList("KG", "UN");
-        comboxUnidadeProduto.setItems(unidade);
-
-        ObservableList<String> fornecedor = FXCollections.observableArrayList("AAA", "BBB", "CCC");
-        fornecedorCombox.setItems(fornecedor);
+        nomeFornecedores();
 
     }
-    
+
     @FXML
     public void salvar() throws IOException {
         if (!this.codigoTextField.getText().isEmpty() //
                 && !this.descriçaoTextField.getText().isEmpty() //
                 && !this.localEstoqueTextField.getText().isEmpty() //
                 && !this.nomeTextField.getText().isEmpty() //
-                && !this.quantidadeTextField.getText().isEmpty());{
+                && !this.unidadeTextField.getText().isEmpty() //
+                && !this.quantidadeTextField.getText().isEmpty());
+        {
+            //armazena variavel user digitou
 
-            cliente = new Cliente( //
+            produto = new Produto( //
                     Integer.parseInt(this.codigoTextField.getText()), // 
                     Integer.parseInt(this.quantidadeTextField.getText()), // 
-                    this.descriçaoTextField.getText(), //
+                    this.nomeTextField.getText(), //
+                    this.unidadeTextField.getText(), //
                     this.localEstoqueTextField.getText(), //
-                    this.nomeTextField.getText());
+                    this.descriçaoTextField.getText(), //
+                    this.fornecedorcombo.getValue().toString());
+            //salvar no banco
+            ProdutoDAO daoDoProduto = new ProdutoDAO();
+            daoDoProduto.salvar(produto);
+        }
+        //msg apos salvar
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Produto Cadastrado!");
+        alert.setHeaderText("Deseja fazer um novo cadastro?");
 
-            FornecedorDAO daoDoFornecedor = new FornecedorDAO();
-            daoDoFornecedor.salvar(fornecedor);
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            //Limpar text fild da tela
+            this.codigoTextField.setText(null);
+            this.quantidadeTextField.setText(null);
+            this.descriçaoTextField.setText(null);
+            this.localEstoqueTextField.setText(null);
+            this.unidadeTextField.setText(null);
+            this.nomeTextField.setText(null);
+
+        } else {
+            App.setRoot("Principal");
         }
 
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Fornecedor Cadastrado!");
-            alert.setHeaderText("Deseja fazer um novo cadastro?");
-            
-            Optional<ButtonType> result = alert.showAndWait();
-            if (result.get() == ButtonType.OK) {
-                 //Limpar text fild da tela
-                 this.codForneTextField.setText(null);
-                 this.cnpjCpfForneTextField.setText(null);
-                 this.numeroForneTextField.setText(null);
-                 this.nomeForneTextField.setText(null);
-                 this.ruaForneTextField.setText(null);
-                 this.telefoneForneTextField.setText(null);
-                 this.emailForneTextField.setText(null);
-                 this.cidadeForneTextField.setText(null);
-                 this.bairroForneTextField.setText(null);
-                 
-            } else {
-                App.setRoot("Principal");
-            }
-        
-            
-        
-
-    }
-    
-
-    public static void setProduto(Produto produto) {
-        CadastroProdutoController.produto = produto;
-    }
-
-    public static Produto getProduto() {
-        return CadastroProdutoController.produto;
     }
 
     @FXML
@@ -117,9 +93,10 @@ public class CadastroProdutoController implements Initializable {
 
     }
 
+    /*
     public void selectForne(ActionEvent event) {
-         String Foner = comboxUnidadeProduto.getSelectionModel().getSelectedItem().toString();
-        /* try {
+         String Foner = fornecedorcombo.getSelectionModel().getSelectedItem().toString();
+         try {
             Connection connection = ConnectionSingleton.getConnection();
             ResultSet selectForne = connection. //
                     createStatement(). //
@@ -127,14 +104,37 @@ public class CadastroProdutoController implements Initializable {
             ObservableList forne = FXCollections.observableArrayList();
             while (selectForne.next()) {
 
-                forne.add(new String(selectForne.getString(1)));
-            }
+                fornecedorcombo.getItems().addAll(ResultSet.getString("nome"));
+}
             fornecedorCombox.setItems(forne);
 
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }*/
+
+    private void nomeFornecedores() {
+        FornecedorDAO dao = new FornecedorDAO();       
+        ObservableList<Fornecedor> fornecedores = FXCollections.observableArrayList(dao.getAll());
+        fornecedorcombo.setItems(fornecedores);
+        
+        fornecedorcombo.setConverter(new StringConverter<Fornecedor>() {
+
+            @Override
+            public String toString(Fornecedor fornecedor) {
+                if (fornecedor == null) {
+                    return null;
+                }
+                return fornecedor.getNomeForne();
+            }
+
+            @Override
+            public Fornecedor fromString(String string) {
+                return fornecedorcombo.getItems().stream().filter(fornecedor -> 
+                    fornecedor.getNomeForne().equals(string)).findFirst().orElse(null);
+            }
+        });
+        
     }
-         */
-    }
+
 }

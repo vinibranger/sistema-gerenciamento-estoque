@@ -101,13 +101,8 @@ public class CadasFornecedorController implements Initializable {
 
     }
 
-    public static void setFornecedor(Fornecedor fornecedor) {
-        CadasFornecedorController.fornecedor = fornecedor;
-    }
 
-    public static Fornecedor getFornecedor() {
-        return CadasFornecedorController.fornecedor;
-    }
+    
 
     @FXML
     private void voltar(ActionEvent event) throws IOException {

@@ -25,12 +25,12 @@ public class FuncionarioDAO {
             String email = resultadoFuncio.getString("email");
             String telefone = resultadoFuncio.getString("telefone");
             String rua = resultadoFuncio.getString("rua");
-            String numeroEnde = resultadoFuncio.getString("numeroEnde");
+            int numeroEnde = resultadoFuncio.getInt("numeroEnde");
             String bairro = resultadoFuncio.getString("bairro");
             String cidade = resultadoFuncio.getString("cidade");
 
-            return new Funcionario(codfuncionario, nome, cpf, rg, dataNascimento, nacionalidade, email,//
-                    telefone, rua, numeroEnde, bairro, cidade);
+            return new Funcionario(codfuncionario, numeroEnde, nome, cpf, rg, dataNascimento, nacionalidade, email,//
+                    telefone, rua, bairro, cidade);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -52,17 +52,18 @@ public class FuncionarioDAO {
                 String nome = resultadoFuncio.getString("nome");
                 String cpf = resultadoFuncio.getString("cpf");
                 String rg = resultadoFuncio.getString("rg");
-                String dataNascimento = resultadoFuncio.getString("data_nascimento");
+                String dataNascimento = resultadoFuncio.getString("bairro");
                 String nacionalidade = resultadoFuncio.getString("nacionalidade");
                 String email = resultadoFuncio.getString("email");
                 String telefone = resultadoFuncio.getString("telefone");
                 String rua = resultadoFuncio.getString("rua");
-                String numeroEnde = resultadoFuncio.getString("numero_ende");
-                String bairro = resultadoFuncio.getString("bairro");
+                int numeroEnde = resultadoFuncio.getInt("numero_ende");
+                String bairro = resultadoFuncio.getString("data_nascimento");
                 String cidade = resultadoFuncio.getString("cidade");
 
-                Funcionario funcioObterDoBanco = new Funcionario(codfuncionario, nome, cpf, rg, dataNascimento, nacionalidade, email,//
-                        telefone, rua, numeroEnde, bairro, cidade);
+                Funcionario funcioObterDoBanco = new Funcionario(codfuncionario,numeroEnde,  nome,  cpf,  rg,//
+             dataNascimento,  nacionalidade,  email,//
+             telefone,  rua,  bairro,  cidade);
                 resultadoTodosFuncionario.add(funcioObterDoBanco);
             }
 

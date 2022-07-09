@@ -149,7 +149,7 @@
                         <Font size="13.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="65.0" text="Salvar" GridPane.columnIndex="2" GridPane.rowIndex="11">
+                  <Button mnemonicParsing="false" onAction="#salvar" prefHeight="47.0" prefWidth="65.0" text="Salvar" GridPane.columnIndex="2" GridPane.rowIndex="11">
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font>

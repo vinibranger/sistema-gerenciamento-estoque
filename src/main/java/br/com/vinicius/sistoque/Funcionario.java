@@ -4,11 +4,14 @@ package br.com.vinicius.sistoque;
 
 public class Funcionario {
     
-    int codfuncionario;
-    String nome, cpf, rg, dataNascimento, nacionalidade, email,telefone,rua,numeroEnde,bairro,cidade;
+    int codfuncionario,numeroEnde;
+    String nome, cpf, rg, dataNascimento, nacionalidade, email,telefone,rua,bairro,cidade;
 
-    public Funcionario(int codfuncionario, String nome, String cpf, String rg, String dataNascimento, String nacionalidade, String email, String telefone, String rua, String numeroEnde, String bairro, String cidade) {
+    public Funcionario(int codfuncionario, int numeroEnde, String nome, String cpf, String rg,//
+            String dataNascimento, String nacionalidade, String email,//
+            String telefone, String rua, String bairro, String cidade) {
         this.codfuncionario = codfuncionario;
+        this.numeroEnde = numeroEnde;
         this.nome = nome;
         this.cpf = cpf;
         this.rg = rg;
@@ -17,7 +20,6 @@ public class Funcionario {
         this.email = email;
         this.telefone = telefone;
         this.rua = rua;
-        this.numeroEnde = numeroEnde;
         this.bairro = bairro;
         this.cidade = cidade;
     }
@@ -28,6 +30,14 @@ public class Funcionario {
 
     public void setCodfuncionario(int codfuncionario) {
         this.codfuncionario = codfuncionario;
+    }
+
+    public int getNumeroEnde() {
+        return numeroEnde;
+    }
+
+    public void setNumeroEnde(int numeroEnde) {
+        this.numeroEnde = numeroEnde;
     }
 
     public String getNome() {
@@ -94,14 +104,6 @@ public class Funcionario {
         this.rua = rua;
     }
 
-    public String getNumeroEnde() {
-        return numeroEnde;
-    }
-
-    public void setNumeroEnde(String numeroEnde) {
-        this.numeroEnde = numeroEnde;
-    }
-
     public String getBairro() {
         return bairro;
     }
@@ -118,6 +120,7 @@ public class Funcionario {
         this.cidade = cidade;
     }
     
+
 
    
 }

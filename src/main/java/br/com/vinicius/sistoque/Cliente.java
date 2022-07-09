@@ -3,17 +3,17 @@ package br.com.vinicius.sistoque;
 
 public class Cliente {
     
-    int codigoCliente;
-    String nome,cnpjCpf,email,telefone,rua,numeEndereco,bairro,cidade;
+    int codigoCliente,numeEndereco,cnpjCpf,telefone;
 
-    public Cliente(int codigoCliente, String nome, String cnpjCpf, String email, String telefone, String rua, String numeEndereco, String bairro, String cidade) {
+    public Cliente(int codigoCliente, int cnpjCpf, int telefone, int numeEndereco, //
+            String nome, String email, String rua, String bairro, String cidade) {
         this.codigoCliente = codigoCliente;
-        this.nome = nome;
-        this.cnpjCpf = cnpjCpf;
-        this.email = email;
-        this.telefone = telefone;
-        this.rua = rua;
         this.numeEndereco = numeEndereco;
+        this.cnpjCpf = cnpjCpf;
+        this.telefone = telefone;
+        this.nome = nome;
+        this.email = email;
+        this.rua = rua;
         this.bairro = bairro;
         this.cidade = cidade;
     }
@@ -26,20 +26,36 @@ public class Cliente {
         this.codigoCliente = codigoCliente;
     }
 
+    public int getNumeEndereco() {
+        return numeEndereco;
+    }
+
+    public void setNumeEndereco(int numeEndereco) {
+        this.numeEndereco = numeEndereco;
+    }
+
+    public int getCnpjCpf() {
+        return cnpjCpf;
+    }
+
+    public void setCnpjCpf(int cnpjCpf) {
+        this.cnpjCpf = cnpjCpf;
+    }
+
+    public int getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(int telefone) {
+        this.telefone = telefone;
+    }
+
     public String getNome() {
         return nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getCnpjCpf() {
-        return cnpjCpf;
-    }
-
-    public void setCnpjCpf(String cnpjCpf) {
-        this.cnpjCpf = cnpjCpf;
     }
 
     public String getEmail() {
@@ -50,28 +66,12 @@ public class Cliente {
         this.email = email;
     }
 
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
     public String getRua() {
         return rua;
     }
 
     public void setRua(String rua) {
         this.rua = rua;
-    }
-
-    public String getNumeEndereco() {
-        return numeEndereco;
-    }
-
-    public void setNumeEndereco(String numeEndereco) {
-        this.numeEndereco = numeEndereco;
     }
 
     public String getBairro() {
@@ -89,4 +89,6 @@ public class Cliente {
     public void setCidade(String cidade) {
         this.cidade = cidade;
     }
+    String nome,email,rua,bairro,cidade;
+
 }
