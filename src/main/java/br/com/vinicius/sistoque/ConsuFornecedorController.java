@@ -51,7 +51,7 @@ public class ConsuFornecedorController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+     
         this.codFornecedorTable.setCellValueFactory(new PropertyValueFactory<>("codigoForne"));
         this.nomeForneceTable.setCellValueFactory(new PropertyValueFactory<>("nomeForne"));
         this.cnpjForneTable.setCellValueFactory(new PropertyValueFactory<>("cnpjForne"));
@@ -61,13 +61,30 @@ public class ConsuFornecedorController implements Initializable {
         this.numeroFornecedorTable.setCellValueFactory(new PropertyValueFactory<>("numero"));
         this.bairroFornecedorTable.setCellValueFactory(new PropertyValueFactory<>("bairro"));
         this.cidadeFornecedorTable.setCellValueFactory(new PropertyValueFactory<>("cidade"));
-
         this.fornecedores = this.tableFornecedorEstoque.getItems();
-
+        //cria lista add com produtos do banco depois mostra a lista na tabela
         FornecedorDAO daoDeFornecedor = new FornecedorDAO();
         List<Fornecedor> fornecedorNoBanco = daoDeFornecedor.getAll();
         this.fornecedores.addAll(fornecedorNoBanco);
+    }
+    @FXML
+    void remover() throws IOException {
+        Fornecedor produtoSelecionado = this.tableFornecedorEstoque.getSelectionModel().getSelectedItem();
+        //quando for remover vem a confirmaçao de remover
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Remover");
+        alert.setHeaderText(produtoSelecionado.getCodigoForne() + " " + produtoSelecionado.getNomeForne());
+        alert.setContentText("Deseja Remover o Registro ? ");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            this.fornecedores.remove(produtoSelecionado);
+        }
+        this.tableFornecedorEstoque.refresh();
+    }
 
+    @FXML
+    private void voltar(ActionEvent event) throws IOException {
+        App.setRoot("Principal");
         /*   
         Fornecedor AAA = new Fornecedor (154,"111","22","33","47","44","55","66","77");
         Fornecedor BBB = new Fornecedor (154,"FGFDGFDHGJH","SDASDASDSZXS","SADDASDASD","4ADASD7","SDASAD","SDADASD55","SFDSAF","SSCXCZXCSF");
@@ -78,28 +95,4 @@ public class ConsuFornecedorController implements Initializable {
         fornecedores.add(CCC);
          */
     }
-
-    @FXML
-    private void voltar(ActionEvent event) throws IOException {
-        App.setRoot("Principal");
-    }
-
-    @FXML
-    void remover() throws IOException {
-        Fornecedor produtoSelecionado = this.tableFornecedorEstoque.getSelectionModel().getSelectedItem();
-
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Remover");
-        alert.setHeaderText(produtoSelecionado.getCodigoForne() + " " + produtoSelecionado.getNomeForne());
-        alert.setContentText("Deseja Remover o Registro ? ");
-
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK) {
-            this.fornecedores.remove(produtoSelecionado);
-
-        }
-        this.tableFornecedorEstoque.refresh();
-
-    }
-
 }

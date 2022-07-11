@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
+
 package br.com.vinicius.sistoque;
 
 import java.io.IOException;
@@ -21,8 +18,7 @@ public class PrincipalController implements Initializable {
 
     @FXML
     private AnchorPane anc_pane;
-    @FXML
-    private Button buttonConsultaEstoque;
+  
     @FXML
     private ImageView imglogo;
 
@@ -32,6 +28,15 @@ public class PrincipalController implements Initializable {
 
     }
 
+    
+    
+     @FXML
+    private void Cadastrouser(ActionEvent event) throws IOException {
+        Pane UserCadastro = new FXMLLoader(App.class.getResource("UserCadastro" + ".fxml")).load();
+        imglogo.setVisible(false);
+        anc_pane.getChildren().add(UserCadastro);
+        
+    }
     @FXML
     private void CadastroCliente(ActionEvent event) throws IOException {
         Pane cadastroCliente = new FXMLLoader(App.class.getResource("CadastroCliente" + ".fxml")).load();

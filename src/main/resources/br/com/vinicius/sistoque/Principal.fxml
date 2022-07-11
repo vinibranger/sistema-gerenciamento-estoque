@@ -12,11 +12,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="942.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.PrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1150.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.PrincipalController">
    <children>
-      <VBox layoutY="5.0" prefHeight="602.0" prefWidth="200.0" style="-fx-background-color: #004AAD; -fx-border-color: #000000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox layoutY="5.0" prefHeight="602.0" prefWidth="200.0" style="-fx-background-color: #004AAD; -fx-border-color: #000000; -fx-border-width: 2px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#MostrarEstoque" prefHeight="25.0" prefWidth="180.0" text="Consutar Estoque">
+            <Button alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#MostrarEstoque" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: #004AAD; -fx-border-color: #000000; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-width: 3px;" text="Consultar Estoque" textFill="WHITE">
                <VBox.margin>
                   <Insets left="10.0" top="50.0" />
                </VBox.margin>
@@ -27,7 +27,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Relatório">
+            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: #004AAD; -fx-border-color: #000000; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-width: 3px;" text="Relatório" textFill="WHITE">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#RelatorioEntSai" text="Emitir Relatório" />
                   <MenuItem mnemonicParsing="false" onAction="#RelatorioEstoque" text="Produtos em Estoque" />
@@ -45,7 +45,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MenuButton>
-            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Cadastrar">
+            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: #004AAD; -fx-border-color: #000000; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-width: 3px;" text="Cadastrar" textFill="WHITE">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#CadastroProduto" text="Produto" />
                   <MenuItem mnemonicParsing="false" onAction="#CadastroCliente" text="Cliente" />
@@ -65,7 +65,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MenuButton>
-            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" text="Consultar">
+            <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: #004AAD; -fx-border-color: #000000; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-width: 3px;" text="Consultar" textFill="WHITE">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#ConsultaCliente" text="Clientes" />
                   <MenuItem mnemonicParsing="false" onAction="#ConsultaFuncio" text="Funcionários" />
@@ -84,7 +84,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MenuButton>
-            <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="25.0" prefWidth="180.0" text="Emitir Nota Físcal">
+            <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: #004AAD; -fx-border-color: #000000; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-width: 3px;" text="Emitir Nota Físcal" textFill="WHITE">
                <VBox.margin>
                   <Insets left="10.0" top="50.0" />
                </VBox.margin>
@@ -94,6 +94,17 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+            </Button>
+            <Button fx:id="cadastroUser" alignment="TOP_LEFT" layoutX="21.0" layoutY="361.0" mnemonicParsing="false" onAction="#Cadastrouser" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: #004AAD; -fx-border-color: #000000; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-width: 3px;" text="Cadastro Usuário" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets left="10.0" top="50.0" />
+               </VBox.margin>
             </Button>
             <ImageView fitHeight="102.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -105,13 +116,13 @@
             </ImageView>
          </children>
       </VBox>
-      <AnchorPane fx:id="anc_pane" layoutX="200.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="anc_pane" layoutX="200.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="293.0" prefWidth="437.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <HBox alignment="CENTER" prefHeight="293.0" prefWidth="437.0" style="-fx-background-color: #708090;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <ImageView fx:id="imglogo" fitHeight="293.0" fitWidth="316.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@LogoNome.png" />
+                        <Image url="@LogocomNome.png" />
                      </image>
                   </ImageView>
                </children>

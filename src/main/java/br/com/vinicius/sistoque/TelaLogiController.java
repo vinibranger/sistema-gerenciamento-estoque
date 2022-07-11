@@ -15,12 +15,16 @@ import javafx.stage.Stage;
 
 public class TelaLogiController implements Initializable {
     @FXML
-     Button buttonSair;
+    Button buttonSair;
     @FXML
     PasswordField senhaPasswordField;
     @FXML
     TextField usuarioTextField;
+    
+    public static Usuario usuario;
 
+
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -29,30 +33,29 @@ public class TelaLogiController implements Initializable {
     @FXML
     void login() throws IOException {
        
-        
-        if (usuarioTextField.getText().equals("Vini")) {
-            if (senhaPasswordField.getText().equals("123")) {
-                App.setRoot("Principal");
-                
-            } else {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Errorr");
-                alert.setHeaderText(null);
-                alert.setContentText("Senha Incorreta");
-                alert.showAndWait();
-            }
+         UsuarioDAO dao = new UsuarioDAO();
+        Usuario usuarioLogin = new Usuario(usuarioTextField.getText(), senhaPasswordField.getText());
+       
+        boolean usuarioExiste = dao.existe(usuarioLogin);
 
+        if (usuarioExiste) {
+            
+            Stage stage = (Stage) this.usuarioTextField.getScene().getWindow();
+            stage.setMaximized(true);
+            stage.setResizable(true);
+
+            App.setRoot("Principal");
         } else {
-
+            
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Errorr");
+            alert.setTitle("Falha no Login");
             alert.setHeaderText(null);
-            alert.setContentText("Usuário Incorreto");
+            alert.setContentText("Usuário ou a senha inserida é inválido");
+
             alert.showAndWait();
-
         }
-
-    }
+        
+    }   
 
     @FXML
     void botaoSair() {

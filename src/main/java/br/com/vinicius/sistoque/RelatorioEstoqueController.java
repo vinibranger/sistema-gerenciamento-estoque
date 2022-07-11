@@ -1,4 +1,3 @@
-
 package br.com.vinicius.sistoque;
 
 import java.io.IOException;
@@ -9,22 +8,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 
-
 public class RelatorioEstoqueController implements Initializable {
 
    
+
+    @FXML
+    private void voltar(ActionEvent event) throws IOException {
+        App.setRoot("Principal");
+
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+       
     }
-     @FXML
-    private void voltar (ActionEvent event) throws IOException {
-        App.setRoot("Principal");
-        
-    }
-
 
 }
-
-    
-
