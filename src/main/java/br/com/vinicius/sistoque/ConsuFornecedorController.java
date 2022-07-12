@@ -17,6 +17,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ConsuFornecedorController implements Initializable {
 
+    public static Fornecedor fornecedor;
     @FXML
     private TableColumn<Fornecedor, String> bairroFornecedorTable;
 
@@ -51,7 +52,7 @@ public class ConsuFornecedorController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-     
+
         this.codFornecedorTable.setCellValueFactory(new PropertyValueFactory<>("codigoForne"));
         this.nomeForneceTable.setCellValueFactory(new PropertyValueFactory<>("nomeForne"));
         this.cnpjForneTable.setCellValueFactory(new PropertyValueFactory<>("cnpjForne"));
@@ -67,6 +68,7 @@ public class ConsuFornecedorController implements Initializable {
         List<Fornecedor> fornecedorNoBanco = daoDeFornecedor.getAll();
         this.fornecedores.addAll(fornecedorNoBanco);
     }
+
     @FXML
     void remover() throws IOException {
         Fornecedor produtoSelecionado = this.tableFornecedorEstoque.getSelectionModel().getSelectedItem();
@@ -81,7 +83,40 @@ public class ConsuFornecedorController implements Initializable {
         }
         this.tableFornecedorEstoque.refresh();
     }
+/*
+    @FXML
+    void editar() throws IOException {
+        Fornecedor fornecedorSelecionado = this.tableFornecedorEstoque.getSelectionModel().getSelectedItem();
+        if (fornecedorSelecionado != null) {
+            CadasFornecedorController.fornecedor(fornecedorSelecionado);
 
+            App.setRoot("CadasFornecedor");
+
+            Fornecedor fornecedorAlterado = CadasFornecedorController.fornecedor();
+
+            fornecedorSelecionado.setCodigoForne(fornecedorAlterado.getCodigoForne());
+            fornecedorSelecionado.setNomeForne(fornecedorAlterado.getNomeForne());
+            fornecedorSelecionado.setCnpjForne(fornecedorAlterado.getCnpjForne());
+            fornecedorSelecionado.setEmail(fornecedorAlterado.getEmail());
+            fornecedorSelecionado.setTelefone(fornecedorAlterado.getTelefone());
+            fornecedorSelecionado.setRua(fornecedorAlterado.getRua());
+            fornecedorSelecionado.setNumero(fornecedorAlterado.getNumero());
+            fornecedorSelecionado.setBairro(fornecedorAlterado.getBairro());
+            fornecedorSelecionado.setCidade(fornecedorAlterado.getCidade());
+
+          
+            
+        }
+    }
+    
+    public static void setFornecedor(Fornecedor fornecedor) {
+        CadasFornecedorController.fornecedor = fornecedor;
+    }
+    
+    public static Fornecedor getFornecedor() {
+        return CadasFornecedorController.fornecedor;
+    }
+*/
     @FXML
     private void voltar(ActionEvent event) throws IOException {
         App.setRoot("Principal");

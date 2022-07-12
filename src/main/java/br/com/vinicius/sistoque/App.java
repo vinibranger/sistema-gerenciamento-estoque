@@ -17,10 +17,10 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("TelaLogi"), 750, 400);
+        scene = new Scene(loadFXML("TelaLogi"), 700, 450);
         stage.setScene(scene);
         stage.show();
-       // stage.setResizable(false);
+        stage.setResizable(false);
         
     }
 

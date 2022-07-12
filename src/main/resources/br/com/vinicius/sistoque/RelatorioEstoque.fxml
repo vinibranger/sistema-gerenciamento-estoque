@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.RelatorioEstoqueController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #708090;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.RelatorioEstoqueController">
    <children>
-      <HBox alignment="CENTER" layoutX="260.0" layoutY="10.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="551.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox alignment="CENTER" layoutX="260.0" layoutY="10.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="551.0" style="-fx-background-color: #708090;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label alignment="CENTER_RIGHT" prefHeight="33.0" prefWidth="365.0" text="Relatório de Estoque" textAlignment="CENTER">
                <font>
@@ -22,11 +22,11 @@
             </Label>
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="250.0" layoutY="250.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="551.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="250.0">
+      <HBox alignment="CENTER" layoutX="250.0" layoutY="250.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="551.0" style="-fx-background-color: #708090;" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="250.0">
          <children>
-            <Button mnemonicParsing="false" text="GERAR">
+            <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="144.0" style="-fx-background-color: #004AAD; -fx-background-radius: 50px; -fx-border-width: 2px; -fx-border-color: #000000; -fx-border-radius: 50px;" text="Gerar" textFill="WHITE">
                <font>
-                  <Font name="Arial" size="18.0" />
+                  <Font name="Arial Bold" size="18.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -42,9 +42,9 @@
             </Label>
          </children>
       </HBox>
-      <Button layoutX="690.0" layoutY="547.0" mnemonicParsing="false" onAction="#voltar" prefHeight="33.0" prefWidth="75.0" text="Voltar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="40.0">
+      <Button layoutX="585.0" layoutY="585.0" mnemonicParsing="false" onAction="#voltar" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #004AAD; -fx-background-radius: 50px; -fx-border-width: 2px; -fx-border-color: #000000; -fx-border-radius: 50px;" text="Voltar" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
          <font>
-            <Font size="13.0" />
+            <Font name="Arial Bold" size="13.0" />
          </font>
       </Button>
    </children>

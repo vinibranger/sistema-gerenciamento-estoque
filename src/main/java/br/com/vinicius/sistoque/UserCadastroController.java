@@ -36,8 +36,8 @@ public class UserCadastroController implements Initializable {
         //armazena variavel user digitou
         usuario = new Usuario( //
                 this.nomeUser.getText(), //
-                this.senhaUser.getText(),
-               Integer.parseInt( this.niveldeAcesso.getText()));
+                this.senhaUser.getText());
+                
 
         //salvar no banco
         UsuarioDAO daoDeUsuario = new UsuarioDAO();

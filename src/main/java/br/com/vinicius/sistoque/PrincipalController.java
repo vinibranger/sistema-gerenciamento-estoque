@@ -21,6 +21,9 @@ public class PrincipalController implements Initializable {
   
     @FXML
     private ImageView imglogo;
+    
+    //FXML do botao
+    
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.RelatoriosController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #708090;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.RelatoriosController">
    <children>
-      <HBox alignment="CENTER" layoutX="260.0" layoutY="10.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="105.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox alignment="CENTER" layoutX="260.0" layoutY="10.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="105.0" prefWidth="800.0" style="-fx-background-color: #708090;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label alignment="CENTER" prefHeight="38.0" prefWidth="546.0" text="Relatório Quantidade Produtos" textAlignment="CENTER">
                <font>
@@ -24,7 +24,7 @@
             </Label>
          </children>
       </HBox>
-      <VBox alignment="CENTER" fillWidth="false" layoutY="150.0" prefHeight="300.0" prefWidth="955.0" style="-fx-background-color: FFFFFF;" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+      <VBox alignment="CENTER" fillWidth="false" layoutY="150.0" prefHeight="300.0" prefWidth="955.0" style="-fx-background-color: #708090;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <TableView fx:id="tabelaUpProdutos" prefHeight="200.0" prefWidth="492.0">
               <columns>
@@ -40,23 +40,20 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="Imprimir Relatório">
+            <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="36.0" prefWidth="134.0" style="-fx-background-color: #004AAD; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-width: 2px; -fx-border-color: #000000;" text="Imprimir Relatório" textFill="WHITE">
                <font>
-                  <Font name="Arial" size="13.0" />
+                  <Font name="Arial Bold" size="13.0" />
                </font>
                <VBox.margin>
                   <Insets top="15.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#voltar" prefHeight="31.0" prefWidth="72.0" text="Voltar">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <VBox.margin>
-                  <Insets left="420.0" top="10.0" />
-               </VBox.margin>
-            </Button>
          </children>
       </VBox>
+      <Button layoutX="742.0" layoutY="504.0" mnemonicParsing="false" onAction="#voltar" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #004AAD; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-width: 2px; -fx-border-color: #000000;" text="Voltar" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

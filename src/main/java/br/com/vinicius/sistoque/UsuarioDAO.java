@@ -2,6 +2,7 @@ package br.com.vinicius.sistoque;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import javafx.scene.control.TextField;
 
 public class UsuarioDAO {
 
@@ -12,7 +13,7 @@ public class UsuarioDAO {
                     createStatement(). //
                     executeQuery("select count(*) from usuario " //
                             + " where usuario = '" + usuario.getUsuario() + "'"//
-                            + " and senha = '" + usuario.getSenha() + "'");
+                            + " and senha = SHA2('" + usuario.getSenha() + "',256)");
 
             conferindoUsuarioExiste.next();
             int qntDeUsuarioESenha = conferindoUsuarioExiste.getInt(1);
@@ -29,23 +30,30 @@ public class UsuarioDAO {
             Connection connection = ConnectionSingleton.getConnection();
             connection.createStatement(). //
                     executeUpdate("INSERT INTO usuario(usuario, senha) values (" 
-                             + ", '" + novoUsuario.getUsuario()+ "'" //
-                            + ", " + novoUsuario.getSenha()+ ")");
+                             + "'" + novoUsuario.getUsuario()+ "'" //
+                            + ", SHA2(" + novoUsuario.getSenha()+ ",256))");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-public void retornaNivelAcesso(Usuario novoUsuario) {
+public int retornaNivelAcesso(TextField usuarioTextField) {
         try {
             Connection connection = ConnectionSingleton.getConnection();
-            connection.createStatement(). //
-                    executeUpdate("INSERT INTO usuario(usuario, senha) values (" 
-                             + ", '" + novoUsuario.getUsuario()+ "'" //
-                            + ", " + novoUsuario.getSenha()+ ")");
+            ResultSet conferindoUsuarioExiste = connection.createStatement(). //
+                    executeQuery("Select (nivel) from usuario where usuario = '" + usuarioTextField.getText() + "'");
+            
+        conferindoUsuarioExiste.next();
+        int qntDeUsuarioESenha = conferindoUsuarioExiste.getInt(1);
+
+        return qntDeUsuarioESenha;
+        
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        
+        
+        
     }
 
 }

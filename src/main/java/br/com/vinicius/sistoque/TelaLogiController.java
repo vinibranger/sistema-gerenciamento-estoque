@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class TelaLogiController implements Initializable {
+
     @FXML
     Button buttonSair;
     @FXML
@@ -21,10 +22,11 @@ public class TelaLogiController implements Initializable {
     @FXML
     TextField usuarioTextField;
     
+    
+    public int nivelDeAcesso;
+
     public static Usuario usuario;
 
-
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -32,21 +34,30 @@ public class TelaLogiController implements Initializable {
 
     @FXML
     void login() throws IOException {
-       
-         UsuarioDAO dao = new UsuarioDAO();
+
+        UsuarioDAO dao = new UsuarioDAO();
         Usuario usuarioLogin = new Usuario(usuarioTextField.getText(), senhaPasswordField.getText());
-       
+
         boolean usuarioExiste = dao.existe(usuarioLogin);
 
         if (usuarioExiste) {
-            
+
             Stage stage = (Stage) this.usuarioTextField.getScene().getWindow();
             stage.setMaximized(true);
             stage.setResizable(true);
+            
+            UsuarioDAO daoDoUsuario = new UsuarioDAO();
+            this.nivelDeAcesso =  daoDoUsuario.retornaNivelAcesso(usuarioTextField);
+            
+            
 
             App.setRoot("Principal");
-        } else {
             
+            
+            
+            
+        } else {
+
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Falha no Login");
             alert.setHeaderText(null);
@@ -54,8 +65,8 @@ public class TelaLogiController implements Initializable {
 
             alert.showAndWait();
         }
-        
-    }   
+
+    }
 
     @FXML
     void botaoSair() {

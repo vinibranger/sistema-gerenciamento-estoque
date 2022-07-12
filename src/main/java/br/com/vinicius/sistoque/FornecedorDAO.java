@@ -15,17 +15,17 @@ public class FornecedorDAO {
                     executeQuery("SELECT * FROM fornecedor WHERE id_fornecedor = " + id);
 
             resultadoFornecedor.next();
-            int id_fornecedor = resultadoFornecedor.getInt("codigoForne");
-            String nome = resultadoFornecedor.getString("nomeForne");
-            String cnpj_cpf = resultadoFornecedor.getString("cnpjforne");
+            int codigoForne = resultadoFornecedor.getInt("id_fornecedor");
+            String nomeForne = resultadoFornecedor.getString("nome");
+            String cnpjForne = resultadoFornecedor.getString("cnpj_cpf");
             String email = resultadoFornecedor.getString("email");
             String telefone = resultadoFornecedor.getString("telefone");
             String rua = resultadoFornecedor.getString("rua");
-            String num_endereco = resultadoFornecedor.getString("numero");
+            String numero = resultadoFornecedor.getString("num_endereco");
             String bairro = resultadoFornecedor.getString("bairro");
             String cidade = resultadoFornecedor.getString("cidade");
 
-            return new Fornecedor(id_fornecedor, nome, cnpj_cpf, email, telefone, rua, num_endereco, bairro, cidade);
+            return new Fornecedor(codigoForne, nomeForne, cnpjForne, email, telefone, rua, numero, bairro, cidade);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -66,7 +66,7 @@ public class FornecedorDAO {
         try {
             Connection connection = ConnectionSingleton.getConnection();
             connection.createStatement(). //
-                    executeUpdate("INSERT INTO fornecedor values (" //
+                    executeUpdate("INSERT INTO fornecedor(id_fornecedor,nome,cnpj_cpf,email,rua,num_endereco,bairro,cidade) values (" //
                             + novoForne.getCodigoForne() //
                             + ", '" + novoForne.getNomeForne() + "'" //
                             + ", '" + novoForne.getCnpjForne() + "'" //

@@ -1,6 +1,8 @@
 package br.com.vinicius.sistoque;
 
 public class Fornecedor {
+     int codigoForne;
+    String nomeForne, cnpjForne, email, telefone, rua, numero, bairro, cidade;
 
     public Fornecedor(int codigoForne, String nomeForne, String cnpjForne,// 
             String email, String telefone, String rua, String numero, String bairro, String cidade) {
@@ -15,8 +17,7 @@ public class Fornecedor {
         this.cidade = cidade;
 
     }
-    int codigoForne;
-    String nomeForne, cnpjForne, email, telefone, rua, numero, bairro, cidade;
+    
 
     public void setCodigoForne(int codigoForne) {
         this.codigoForne = codigoForne;
