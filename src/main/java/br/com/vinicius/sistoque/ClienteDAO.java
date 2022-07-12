@@ -26,8 +26,8 @@ public class ClienteDAO {
             String cidade = resultadoCliente.getString("cidade");
 
             return new Cliente(codigoCliente, cnpjCpf, telefone, numeEndereco,//
-                  nome,email,rua,bairro,cidade);
-                    
+                    nome, email, rua, bairro, cidade);
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -70,16 +70,18 @@ public class ClienteDAO {
         try {
             Connection connection = ConnectionSingleton.getConnection();
             connection.createStatement(). //
-                    executeUpdate("INSERT INTO cliente values (" //
+                    executeUpdate("INSERT INTO cliente (idcliente,nome,cnpj_cpf,email,telefone,"
+                            + "rua,num_endereco,bairro,cidade) values (" //
                             + novoCliente.getCodigoCliente() //
                             + ", '" + novoCliente.getNome() + "'" //
-                            + ", '" + novoCliente.getCnpjCpf() + "'" //
-                            + ", '" + novoCliente.getEmail() + "'" //
-                            + ", '" + novoCliente.getTelefone() + "'" //
-                            + ", '" + novoCliente.getRua() + "'" //
-                            + ", '" + novoCliente.getNumeEndereco() + "'" //
+                            + ", '" + novoCliente.getCnpjCpf() + "'" //   
+                            + ", '" + novoCliente.getEmail() + "'" //        
+                            + ", '" + novoCliente.getTelefone() + "'" // 
+                            + ", '" + novoCliente.getRua() + "'" //    
+                            + ", '" + novoCliente.getNumeEndereco() + "'" //           
                             + ", '" + novoCliente.getBairro() + "'" //
-                            + ", " + novoCliente.getCidade() + ")");
+                            + ", '" + novoCliente.getCidade() + "')");
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

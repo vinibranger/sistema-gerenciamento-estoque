@@ -18,19 +18,20 @@ public class FuncionarioDAO {
 
             int codfuncionario = resultadoFuncio.getInt("codigo_funcio");
             String nome = resultadoFuncio.getString("nome");
-            String cpf = resultadoFuncio.getString("cpf");
-            String rg = resultadoFuncio.getString("rg");
+            int cpf = resultadoFuncio.getInt("cpf");
+            int rg = resultadoFuncio.getInt("rg");
             String dataNascimento = resultadoFuncio.getString("dataNascimento");
             String nacionalidade = resultadoFuncio.getString("nacionalidade");
             String email = resultadoFuncio.getString("email");
-            String telefone = resultadoFuncio.getString("telefone");
+            int telefone = resultadoFuncio.getInt("telefone");
             String rua = resultadoFuncio.getString("rua");
             int numeroEnde = resultadoFuncio.getInt("numeroEnde");
             String bairro = resultadoFuncio.getString("bairro");
             String cidade = resultadoFuncio.getString("cidade");
 
-            return new Funcionario(codfuncionario, numeroEnde, nome, cpf, rg, dataNascimento, nacionalidade, email,//
-                    telefone, rua, bairro, cidade);
+            return new Funcionario(codfuncionario,numeroEnde,cpf,rg,telefone, //
+             nome,  dataNascimento,  nacionalidade,email,//
+             rua,bairro,cidade);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -50,20 +51,20 @@ public class FuncionarioDAO {
 
                 int codfuncionario = resultadoFuncio.getInt("codigo_funcio");//igual banco
                 String nome = resultadoFuncio.getString("nome");
-                String cpf = resultadoFuncio.getString("cpf");
-                String rg = resultadoFuncio.getString("rg");
+                int cpf = resultadoFuncio.getInt("cpf");
+                int rg = resultadoFuncio.getInt("rg");
                 String dataNascimento = resultadoFuncio.getString("bairro");
                 String nacionalidade = resultadoFuncio.getString("nacionalidade");
                 String email = resultadoFuncio.getString("email");
-                String telefone = resultadoFuncio.getString("telefone");
+                int telefone = resultadoFuncio.getInt("telefone");
                 String rua = resultadoFuncio.getString("rua");
                 int numeroEnde = resultadoFuncio.getInt("numero_ende");
                 String bairro = resultadoFuncio.getString("data_nascimento");
                 String cidade = resultadoFuncio.getString("cidade");
 
-                Funcionario funcioObterDoBanco = new Funcionario(codfuncionario,numeroEnde,  nome,  cpf,  rg,//
-             dataNascimento,  nacionalidade,  email,//
-             telefone,  rua,  bairro,  cidade);
+                Funcionario funcioObterDoBanco = new Funcionario(codfuncionario,numeroEnde,cpf,rg,telefone, //
+             nome,  dataNascimento,  nacionalidade,email,//
+             rua,bairro,cidade);
                 resultadoTodosFuncionario.add(funcioObterDoBanco);
             }
 
@@ -77,7 +78,7 @@ public class FuncionarioDAO {
         try {
             Connection connection = ConnectionSingleton.getConnection();
             connection.createStatement(). //
-                    executeUpdate("INSERT INTO funcionario values (" //
+                    executeUpdate("INSERT INTO funcionario (codigo_funcio,nome,cpf,rg,data_nascimento,nacionalidade,email,telefone,rua,numero_ende,bairro,cidade) values (" //
                             + novoFuncionario.getCodfuncionario() //
                             + ", '" + novoFuncionario.getNome() + "'" //
                             + ", '" + novoFuncionario.getCpf() + "'" //
@@ -89,7 +90,7 @@ public class FuncionarioDAO {
                             + ", '" + novoFuncionario.getRua() + "'" //
                             + ", '" + novoFuncionario.getNumeroEnde() + "'" //
                             + ", '" + novoFuncionario.getBairro() + "'" //
-                            + ", " + novoFuncionario.getCidade() + ")");
+                            + ", '" + novoFuncionario.getCidade() + "')");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

@@ -43,13 +43,13 @@
                   </TableView>
                   <HBox prefHeight="60.0" prefWidth="536.0">
                      <children>
-                        <TextField prefHeight="25.0" prefWidth="287.0" style="-fx-background-radius: 20px; -fx-border-radius: 20px; -fx-border-width: 2px; -fx-border-color: #000000;">
+                        <TextField fx:id="pesquisaNome" onAction="#pesquisarProduto" prefHeight="25.0" prefWidth="287.0" style="-fx-background-radius: 20px; -fx-border-radius: 20px; -fx-border-width: 2px; -fx-border-color: #000000;">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>
                         </TextField>
                         
-                        <Button fx:id="pesquisa" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #004AAD; -fx-background-radius: 30px; -fx-border-radius: 30px; -fx-border-width: 2px; -fx-border-color: #000000;" text="Pesquisar" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#pesquisarProduto" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #004AAD; -fx-background-radius: 30px; -fx-border-radius: 30px; -fx-border-width: 2px; -fx-border-color: #000000;" text="Pesquisar" textFill="WHITE">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>

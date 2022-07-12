@@ -43,8 +43,7 @@ public class CadastroClienteController implements Initializable {
     @FXML
     private TextField telefoneClientTextField;
 
-    @FXML
-    private Button buttonVoltar;
+    
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -65,14 +64,18 @@ public class CadastroClienteController implements Initializable {
 
             cliente = new Cliente(//
                     Integer.parseInt(this.codClientTextField.getText()), // 
-                    Integer.parseInt(this.telefoneClientTextField.getText()), //
-                    Integer.parseInt(this.cnpjCpfClientTextField.getText()),//
+                    Integer.parseInt(this.cnpjCpfClientTextField.getText()),//                 
+                    Integer.parseInt(this.telefoneClientTextField.getText()),//               
                     Integer.parseInt(this.numeroClientTextField.getText()), //
-                    this.ruaClientTextField.getText(), //
                     this.nomeClientTextField.getText(), //
                     this.emailClientTextField.getText(), //
-                    this.cidadeClientTextField.getText(), //
-                    this.bairroClientTextField.getText());
+                    this.ruaClientTextField.getText(), //          
+                    this.bairroClientTextField.getText(), //
+                    this.cidadeClientTextField.getText());
+          
+                    
+                   
+                    
 
             ClienteDAO daoDoCliente = new ClienteDAO();
             daoDoCliente.salvar(cliente);

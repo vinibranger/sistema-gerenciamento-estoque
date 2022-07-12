@@ -28,10 +28,9 @@
          <children>
             <TableView fx:id="tabelaUpProdutos" prefHeight="200.0" prefWidth="492.0">
               <columns>
-                  <TableColumn fx:id="idProduto" prefWidth="98.0" sortType="DESCENDING" text="Operação" />
-                  <TableColumn fx:id="data" prefWidth="87.0" sortType="DESCENDING" text="Data" />
-                <TableColumn fx:id="qntNova" prefWidth="86.0" sortType="DESCENDING" text="Quantidade" />
                 <TableColumn fx:id="nomeProduto" prefWidth="127.0" sortType="DESCENDING" text="Produto" />
+                <TableColumn fx:id="qntNova" prefWidth="86.0" sortType="DESCENDING" text="Quantidade" />
+                  <TableColumn fx:id="data" prefWidth="87.0" sortType="DESCENDING" text="Data" />
               </columns>
                <VBox.margin>
                   <Insets left="250.0" right="250.0" />

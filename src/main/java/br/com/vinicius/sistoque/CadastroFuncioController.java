@@ -3,7 +3,6 @@ package br.com.vinicius.sistoque;
 import static br.com.vinicius.sistoque.CadastroProdutoController.produto;
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -17,7 +16,7 @@ import javafx.scene.control.TextField;
 
 public class CadastroFuncioController implements Initializable {
 
-    public static Funcionario funcionario; 
+    public static Funcionario funcionario;
     @FXML
     private TextField bairro;
 
@@ -63,11 +62,11 @@ public class CadastroFuncioController implements Initializable {
         if (!this.codigo.getText().isEmpty() //
                 && !this.cpf.getText().isEmpty() //
                 && !this.bairro.getText().isEmpty() //
-                && !this.cidade.getText().isEmpty() //
                 && !this.email.getText().isEmpty() //
                 && !this.nome.getText().isEmpty() //
                 && !this.numero.getText().isEmpty() //
                 && !this.rg.getText().isEmpty() //
+                && !this.cidade.getText().isEmpty() //
                 && !this.rua.getText().isEmpty() //
                 && !this.nacionalidade.getText().isEmpty() //
                 && !this.telefone.getText().isEmpty());
@@ -76,19 +75,19 @@ public class CadastroFuncioController implements Initializable {
 
             funcionario = new Funcionario( //
                     Integer.parseInt(this.codigo.getText()), // 
-                   Integer.parseInt(this.numero.getText()), //
+                    Integer.parseInt(this.numero.getText()), //
+                    Integer.parseInt(this.cpf.getText()), //
+                    Integer.parseInt(this.rg.getText()), //
+                    Integer.parseInt(this.telefone.getText()), //
                     this.nome.getText(), //
-                    this.cpf.getText(), //
-                    this.bairro.getText(), //
-                    this.cidade.getText(), //
-                    this.email.getText(), //
-                    this.rg.getText(), //
-                    this.rua.getText(), //
-                    this.nacionalidade.getText(), //
                     this.dataNasciDatapicker.getValue().toString(), //
-                    this.telefone.getText());
+                    this.nacionalidade.getText(), //
+                    this.email.getText(), //
+                    this.rua.getText(), //
+                    this.bairro.getText(), //
+                    this.cidade.getText());
             //salvar no banco
-           FuncionarioDAO daoDoFuncionario = new FuncionarioDAO();
+            FuncionarioDAO daoDoFuncionario = new FuncionarioDAO();
             daoDoFuncionario.salvar(funcionario);
         }
         //msg apos salvar
@@ -110,7 +109,7 @@ public class CadastroFuncioController implements Initializable {
             this.rg.setText(null);
             this.rua.setText(null);
             this.telefone.setText(null);
-            
+            this.dataNasciDatapicker.setValue(null);
 
         } else {
             App.setRoot("Principal");
@@ -118,9 +117,9 @@ public class CadastroFuncioController implements Initializable {
 
     }
 
-@FXML
-private void voltar (ActionEvent event) throws IOException {
+    @FXML
+    private void voltar(ActionEvent event) throws IOException {
         App.setRoot("Principal");
-        
+
     }
 }

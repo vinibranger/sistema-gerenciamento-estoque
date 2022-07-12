@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,6 +14,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class MostrarEstoqueController implements Initializable {
@@ -37,9 +39,13 @@ public class MostrarEstoqueController implements Initializable {
     private TableColumn<Produto, String> unidadeProdutoTable;
     @FXML
     private TableView<Produto> tableProdutoEstoque;
+   
+    @FXML
+    private TextField pesquisaNome;
 
     public ObservableList<Produto> produtos;
-
+    
+       
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -50,12 +56,14 @@ public class MostrarEstoqueController implements Initializable {
         this.localEstoqueProdutoTable.setCellValueFactory(new PropertyValueFactory<>("localEstoque"));
         this.descriçaoProdutoTable.setCellValueFactory(new PropertyValueFactory<>("descricao"));
         this.fornecedorProdutoTable.setCellValueFactory(new PropertyValueFactory<>("fornecedor"));
-
+        
         this.produtos = this.tableProdutoEstoque.getItems();
         ProdutoDAO daoDeProdutos = new ProdutoDAO();
-        List<Produto> produtosNoBanco = daoDeProdutos.mostraTudo();
+        List<Produto> produtosNoBanco = daoDeProdutos.mostraPeloNome(pesquisaNome.getText());
 
         this.produtos.addAll(produtosNoBanco);
+        
+        
 
     }
 
@@ -63,6 +71,14 @@ public class MostrarEstoqueController implements Initializable {
     private void voltar(ActionEvent event) throws IOException {
         App.setRoot("Principal");
 
+    }
+    @FXML
+    private void pesquisarProduto(ActionEvent event) throws IOException {
+        ProdutoDAO daoDeProdutos = new ProdutoDAO();
+        List<Produto> produtosNoBanco = daoDeProdutos.mostraPeloNome(pesquisaNome.getText());
+
+        this.produtos.clear();//limpa para nao duplicar 
+        this.produtos.addAll(produtosNoBanco);//sozinho duplica os produtos da lista
     }
 
     @FXML

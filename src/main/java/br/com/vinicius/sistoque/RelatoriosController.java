@@ -25,8 +25,7 @@ public class RelatoriosController implements Initializable {
 
     @FXML
     private TableColumn<Relatorio, Integer> qntNova;
-    @FXML
-    private TableColumn<Relatorio, Integer> idProduto;
+    
     @FXML
     private TableView<Relatorio> tabelaUpProdutos;
 
@@ -35,16 +34,15 @@ public class RelatoriosController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        this.idProduto.setCellValueFactory(new PropertyValueFactory<>("id"));
-        this.qntNova.setCellValueFactory(new PropertyValueFactory<>("quantidade_Nova"));
-        this.nomeProduto.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        this.data.setCellValueFactory(new PropertyValueFactory<>("changedAt"));
+        this.qntNova.setCellValueFactory(new PropertyValueFactory<>("quantNova"));
+        this.nomeProduto.setCellValueFactory(new PropertyValueFactory<>("nomeProduto"));
+        this.data.setCellValueFactory(new PropertyValueFactory<>("data"));
         
         this.relatorios = this.tabelaUpProdutos.getItems();
         
         
        RelatorioDAO daoDeRelatorios = new RelatorioDAO();
-        List<Relatorio> relatorioBanco = daoDeRelatorios.mostraRelatorio();
+        List<Relatorio> relatorioBanco = daoDeRelatorios.mostrarRelatorio();
       this.relatorios.addAll(relatorioBanco);
 
     }

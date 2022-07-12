@@ -36,8 +36,8 @@ public class UserCadastroController implements Initializable {
         //armazena variavel user digitou
         usuario = new Usuario( //
                 this.nomeUser.getText(), //
-                this.senhaUser.getText());
-                
+                this.senhaUser.getText(), //
+                Integer.parseInt(this.niveldeAcesso.getText()));
 
         //salvar no banco
         UsuarioDAO daoDeUsuario = new UsuarioDAO();
@@ -53,6 +53,7 @@ public class UserCadastroController implements Initializable {
             //Limpar text fild da tela
             this.nomeUser.setText(null);
             this.senhaUser.setText(null);
+            this.niveldeAcesso.setText(null);
 
         } else {
             App.setRoot("Principal");

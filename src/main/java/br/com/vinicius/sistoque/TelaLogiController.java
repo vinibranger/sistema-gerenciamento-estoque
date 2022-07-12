@@ -22,10 +22,7 @@ public class TelaLogiController implements Initializable {
     @FXML
     TextField usuarioTextField;
     
-    
-    public int nivelDeAcesso;
-
-    public static Usuario usuario;
+    static int nivelDeAcesso;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -36,7 +33,8 @@ public class TelaLogiController implements Initializable {
     void login() throws IOException {
 
         UsuarioDAO dao = new UsuarioDAO();
-        Usuario usuarioLogin = new Usuario(usuarioTextField.getText(), senhaPasswordField.getText());
+        Usuario usuarioLogin = new Usuario(usuarioTextField.getText(), //
+                senhaPasswordField.getText());
 
         boolean usuarioExiste = dao.existe(usuarioLogin);
 
@@ -48,6 +46,7 @@ public class TelaLogiController implements Initializable {
             
             UsuarioDAO daoDoUsuario = new UsuarioDAO();
             this.nivelDeAcesso =  daoDoUsuario.retornaNivelAcesso(usuarioTextField);
+            
             
             
 

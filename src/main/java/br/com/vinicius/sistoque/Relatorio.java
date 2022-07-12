@@ -4,12 +4,14 @@ package br.com.vinicius.sistoque;
 public class Relatorio {
 
   
-     String nomeProduto, data;
-    int quantNova,idProduto;
+    String nomeProduto;
+    String data;
+    int quantNova;
+    int idSaida;
 
-    public Relatorio(int quantNova, int idProduto, String nomeProduto, String data) {
+    public Relatorio(int quantNova, int idSaida, String nomeProduto, String data) {
         this.quantNova = quantNova;
-        this.idProduto = idProduto;
+        this.idSaida = idSaida;
         this.nomeProduto = nomeProduto;
         this.data = data;
     }
@@ -23,11 +25,11 @@ public class Relatorio {
     }
 
     public int getIdProduto() {
-        return idProduto;
+        return idSaida;
     }
 
     public void setIdProduto(int idProduto) {
-        this.idProduto = idProduto;
+        this.idSaida = idProduto;
     }
 
     public String getNomeProduto() {

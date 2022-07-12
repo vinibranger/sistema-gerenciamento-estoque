@@ -11,7 +11,7 @@ public class RelatorioDAO {
     
     
     
-     public List<Relatorio> mostraRelatorio() {
+     public List<Relatorio> mostrarRelatorio() {
         try {
             Connection connection = ConnectionSingleton.getConnection();
             ResultSet resultadoRelatorioEntraSai = connection. //
@@ -22,12 +22,12 @@ public class RelatorioDAO {
 
             while (!resultadoRelatorioEntraSai.isLast()) {
                 resultadoRelatorioEntraSai.next();
-                int idProduto = resultadoRelatorioEntraSai.getInt("id");
+                int idSaida = resultadoRelatorioEntraSai.getInt("id");
                 int quantNova = resultadoRelatorioEntraSai.getInt("quantidade_Nova");
                 String nomeProduto = resultadoRelatorioEntraSai.getString("nome");
                 String data = resultadoRelatorioEntraSai.getString("changedAt");
 
-                Relatorio relatorioProdtcBanco = new Relatorio( idProduto,quantNova,  nomeProduto,  data);
+                Relatorio relatorioProdtcBanco = new Relatorio( idSaida,quantNova,  nomeProduto,  data);
                 resultadoEntraSaii.add(relatorioProdtcBanco);
             }
 

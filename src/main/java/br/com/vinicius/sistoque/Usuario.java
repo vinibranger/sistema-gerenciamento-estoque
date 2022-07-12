@@ -9,7 +9,12 @@ public class Usuario {
     public Usuario(String usuario, String senha) {
         this.usuario = usuario;
         this.senha = senha;
-        //  this.nivelUser = nivelUser;
+    }
+
+    public Usuario(String usuario, String senha, int nivelUser) {
+        this.usuario = usuario;
+        this.senha = senha;
+        this.nivelUser = nivelUser;
     }
    
     public String getUsuario() {
@@ -27,12 +32,12 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    /*
+    
     public int getNivelUser() {
         return nivelUser;
     }
 
     public void setNivelUser(int nivelUser) {
        this.nivelUser = nivelUser;
-    }*/
+    }
 }

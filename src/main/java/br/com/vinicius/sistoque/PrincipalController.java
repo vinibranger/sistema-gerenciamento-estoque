@@ -1,4 +1,3 @@
-
 package br.com.vinicius.sistoque;
 
 import java.io.IOException;
@@ -12,40 +11,67 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.event.ActionEvent;
+import javafx.scene.control.MenuButton;
 import javafx.scene.image.ImageView;
 
 public class PrincipalController implements Initializable {
 
     @FXML
     private AnchorPane anc_pane;
-  
+
     @FXML
     private ImageView imglogo;
-    
-    //FXML do botao
-    
+
+    @FXML
+    private MenuButton cadastro;
+
+    @FXML
+    private Button cadastroUser;
+
+    @FXML
+    private MenuButton consultar;
+
+    @FXML
+    private Button notaFiscal;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         imglogo.setVisible(true);
+        if (TelaLogiController.nivelDeAcesso == 1) {
+            cadastro.setVisible(false);
+            cadastroUser.setVisible(false);
+            consultar.setVisible(false);
+            notaFiscal.setVisible(false);
+        }else if (TelaLogiController.nivelDeAcesso == 2) {
+            cadastro.setVisible(true);
+            cadastroUser.setVisible(false);
+            consultar.setVisible(true);
+            notaFiscal.setVisible(true);
+        }else{
+             cadastro.setVisible(true);
+            cadastroUser.setVisible(true);
+            consultar.setVisible(true);
+            notaFiscal.setVisible(true);
+        }
+        
 
+        //usuario.nivelUser==1
     }
 
-    
-    
-     @FXML
+    @FXML
     private void Cadastrouser(ActionEvent event) throws IOException {
         Pane UserCadastro = new FXMLLoader(App.class.getResource("UserCadastro" + ".fxml")).load();
         imglogo.setVisible(false);
         anc_pane.getChildren().add(UserCadastro);
-        
+
     }
+
     @FXML
     private void CadastroCliente(ActionEvent event) throws IOException {
         Pane cadastroCliente = new FXMLLoader(App.class.getResource("CadastroCliente" + ".fxml")).load();
         imglogo.setVisible(false);
         anc_pane.getChildren().add(cadastroCliente);
-        
+
     }
 
     @FXML
@@ -116,7 +142,7 @@ public class PrincipalController implements Initializable {
         Pane RelatorioEntSai = new FXMLLoader(App.class.getResource("Relatorios" + ".fxml")).load();
         imglogo.setVisible(false);
         anc_pane.getChildren().add(RelatorioEntSai);
-        
+
     }
 
 }

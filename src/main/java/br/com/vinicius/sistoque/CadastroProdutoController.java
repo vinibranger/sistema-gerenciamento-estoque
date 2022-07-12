@@ -80,6 +80,7 @@ public class CadastroProdutoController implements Initializable {
             this.localEstoqueTextField.setText(null);
             this.unidadeTextField.setText(null);
             this.nomeTextField.setText(null);
+            this.fornecedorcombo.setValue(null);
 
         } else {
             App.setRoot("Principal");
@@ -93,26 +94,7 @@ public class CadastroProdutoController implements Initializable {
 
     }
 
-    /*
-    public void selectForne(ActionEvent event) {
-         String Foner = fornecedorcombo.getSelectionModel().getSelectedItem().toString();
-         try {
-            Connection connection = ConnectionSingleton.getConnection();
-            ResultSet selectForne = connection. //
-                    createStatement(). //
-                    executeQuery("SELECT nome FROM fornecedor ");
-            ObservableList forne = FXCollections.observableArrayList();
-            while (selectForne.next()) {
-
-                fornecedorcombo.getItems().addAll(ResultSet.getString("nome"));
-}
-            fornecedorCombox.setItems(forne);
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }*/
-
+//para puxar as info para o combox
     private void nomeFornecedores() {
         FornecedorDAO dao = new FornecedorDAO();       
         ObservableList<Fornecedor> fornecedores = FXCollections.observableArrayList(dao.getAll());

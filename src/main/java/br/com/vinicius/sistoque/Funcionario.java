@@ -4,21 +4,21 @@ package br.com.vinicius.sistoque;
 
 public class Funcionario {
     
-    int codfuncionario,numeroEnde;
-    String nome, cpf, rg, dataNascimento, nacionalidade, email,telefone,rua,bairro,cidade;
+    int codfuncionario,numeroEnde, cpf, rg,telefone;
+    String nome, dataNascimento, nacionalidade, email,rua,bairro,cidade;
 
-    public Funcionario(int codfuncionario, int numeroEnde, String nome, String cpf, String rg,//
-            String dataNascimento, String nacionalidade, String email,//
-            String telefone, String rua, String bairro, String cidade) {
+    public Funcionario(int codfuncionario, int numeroEnde, int cpf, int rg, int telefone, //
+            String nome, String dataNascimento, String nacionalidade, String email,//
+            String rua, String bairro, String cidade) {
         this.codfuncionario = codfuncionario;
         this.numeroEnde = numeroEnde;
-        this.nome = nome;
         this.cpf = cpf;
         this.rg = rg;
+        this.telefone = telefone;
+        this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.nacionalidade = nacionalidade;
         this.email = email;
-        this.telefone = telefone;
         this.rua = rua;
         this.bairro = bairro;
         this.cidade = cidade;
@@ -40,28 +40,36 @@ public class Funcionario {
         this.numeroEnde = numeroEnde;
     }
 
+    public int getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(int cpf) {
+        this.cpf = cpf;
+    }
+
+    public int getRg() {
+        return rg;
+    }
+
+    public void setRg(int rg) {
+        this.rg = rg;
+    }
+
+    public int getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(int telefone) {
+        this.telefone = telefone;
+    }
+
     public String getNome() {
         return nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getRg() {
-        return rg;
-    }
-
-    public void setRg(String rg) {
-        this.rg = rg;
     }
 
     public String getDataNascimento() {
@@ -88,14 +96,6 @@ public class Funcionario {
         this.email = email;
     }
 
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
     public String getRua() {
         return rua;
     }
@@ -119,8 +119,8 @@ public class Funcionario {
     public void setCidade(String cidade) {
         this.cidade = cidade;
     }
-    
 
+   
 
    
 }

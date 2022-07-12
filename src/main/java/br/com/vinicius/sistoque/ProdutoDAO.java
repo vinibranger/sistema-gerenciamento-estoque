@@ -30,6 +30,39 @@ public class ProdutoDAO {
             throw new RuntimeException(e);
         }
     }
+    
+    public List<Produto> mostraPeloNome(String nomePesquisa) {
+        if (nomePesquisa == null || nomePesquisa.isBlank()) {
+            return mostraTudo();
+        }
+        
+        try {
+            Connection connection = ConnectionSingleton.getConnection();
+            ResultSet resultadoProdutos = connection. //
+                    createStatement(). //
+                    executeQuery("SELECT * FROM produto WHERE nome like '%" + nomePesquisa + "%'");
+
+            List<Produto> resultadoComTodosOsProdutos = new ArrayList<>();
+
+            while (resultadoProdutos.next()) {
+                int codigo = resultadoProdutos.getInt("cod_produ");
+                int quantidade = resultadoProdutos.getInt("quantidade");
+                String nome = resultadoProdutos.getString("nome");
+                String unidade = resultadoProdutos.getString("unidade");
+                String localEstoque = resultadoProdutos.getString("local_estoque");
+                String descricao = resultadoProdutos.getString("descriçao");
+                String fornecedor = resultadoProdutos.getString("fornecedor");
+
+                Produto produtoObterDoBanco = new Produto(codigo, quantidade, nome, unidade, localEstoque,//
+                    descricao, fornecedor);
+                resultadoComTodosOsProdutos.add(produtoObterDoBanco);
+            }
+
+            return resultadoComTodosOsProdutos;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 
    
     public List<Produto> mostraTudo() {
@@ -41,8 +74,7 @@ public class ProdutoDAO {
 
             List<Produto> resultadoComTodosOsProdutos = new ArrayList<>();
 
-            while (!resultadoProdutos.isLast()) {
-                resultadoProdutos.next();
+            while (resultadoProdutos.next()) {
                 int codigo = resultadoProdutos.getInt("cod_produ");
                 int quantidade = resultadoProdutos.getInt("quantidade");
                 String nome = resultadoProdutos.getString("nome");
@@ -74,7 +106,7 @@ public class ProdutoDAO {
                             + ", '" + novoProduto.getUnidade() + "'" //
                             + ", '" + novoProduto.getLocalEstoque() + "'" //
                             + ", '" + novoProduto.getDescricao() + "'" //
-                            + ", " + novoProduto.getFornecedor() + ")");
+                            + ", '" + novoProduto.getFornecedor() + "')");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -92,7 +124,7 @@ public class ProdutoDAO {
                             + ", fornecedor = '" + produtoEditado.getFornecedor() +"'"//
                             + "  WHERE cod_produ = " + produtoEditado.getCodigo();
             
-            System.out.println(comando);
+            System.out.println(comando);//mostra info na tela
             
             connection.createStatement(). //
                     executeUpdate(comando);
