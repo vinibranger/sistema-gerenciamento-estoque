@@ -61,7 +61,7 @@ public class CadastroProdutoController implements Initializable {
                     this.unidadeTextField.getText(), //
                     this.localEstoqueTextField.getText(), //
                     this.descriçaoTextField.getText(), //
-                    this.fornecedorcombo.getValue().toString());
+                    this.fornecedorcombo.getValue().getNomeForne());
             //salvar no banco
             ProdutoDAO daoDoProduto = new ProdutoDAO();
             daoDoProduto.salvar(produto);

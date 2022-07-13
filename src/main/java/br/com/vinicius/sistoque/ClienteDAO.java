@@ -42,8 +42,8 @@ public class ClienteDAO {
 
             List<Cliente> resultadoTodosCliente = new ArrayList<>();
 
-            while (!resultadoCliente.isLast()) {
-                resultadoCliente.next();
+            while (resultadoCliente.next()) {
+       
 
                 int codigoCliente = resultadoCliente.getInt("idcliente");
                 String nome = resultadoCliente.getString("nome");

@@ -120,14 +120,6 @@ public class ConsuFornecedorController implements Initializable {
     @FXML
     private void voltar(ActionEvent event) throws IOException {
         App.setRoot("Principal");
-        /*   
-        Fornecedor AAA = new Fornecedor (154,"111","22","33","47","44","55","66","77");
-        Fornecedor BBB = new Fornecedor (154,"FGFDGFDHGJH","SDASDASDSZXS","SADDASDASD","4ADASD7","SDASAD","SDADASD55","SFDSAF","SSCXCZXCSF");
-        Fornecedor CCC = new Fornecedor (1545744,"11FSDSDF1","22FGDFG","3DFSDFDS","DFSDF","4FDSF","FSDSD","DSFSDF","DFSDF");
-        
-        fornecedores.add(AAA);
-        fornecedores.add(BBB);
-        fornecedores.add(CCC);
-         */
+    
     }
 }

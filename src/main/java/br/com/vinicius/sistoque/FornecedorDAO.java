@@ -39,8 +39,7 @@ public class FornecedorDAO {
                     executeQuery("SELECT * FROM fornecedor ");
             List<Fornecedor> resultadoTodosOsFornecedor = new ArrayList<>();
 
-            while (!resultadoFornecedor.isLast()) {
-                resultadoFornecedor.next();
+            while (resultadoFornecedor.next()) {
 
                 int codigoForne = resultadoFornecedor.getInt("id_fornecedor");
                 String nomeForne = resultadoFornecedor.getString("nome");
@@ -75,7 +74,7 @@ public class FornecedorDAO {
                             + ", '" + novoForne.getRua() + "'" //
                             + ", '" + novoForne.getNumero() + "'" //
                             + ", '" + novoForne.getBairro() + "'" //
-                            + ", " + novoForne.getCidade() + ")");
+                            + ",' " + novoForne.getCidade() + "')");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

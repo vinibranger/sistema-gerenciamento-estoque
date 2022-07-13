@@ -20,8 +20,7 @@ public class RelatorioDAO {
 
             List<Relatorio> resultadoEntraSaii = new ArrayList<>();
 
-            while (!resultadoRelatorioEntraSai.isLast()) {
-                resultadoRelatorioEntraSai.next();
+            while (resultadoRelatorioEntraSai.next()) {
                 int idSaida = resultadoRelatorioEntraSai.getInt("id");
                 int quantNova = resultadoRelatorioEntraSai.getInt("quantidade_Nova");
                 String nomeProduto = resultadoRelatorioEntraSai.getString("nome");

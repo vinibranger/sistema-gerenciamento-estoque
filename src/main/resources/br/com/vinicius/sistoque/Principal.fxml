@@ -118,7 +118,7 @@
       </VBox>
       <AnchorPane fx:id="anc_pane" layoutX="200.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="293.0" prefWidth="437.0" style="-fx-background-color: #708090;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <HBox alignment="CENTER" prefHeight="293.0" prefWidth="437.0" style="-fx-background-color: #d3d3d3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <ImageView fx:id="imglogo" fitHeight="293.0" fitWidth="316.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                      <image>

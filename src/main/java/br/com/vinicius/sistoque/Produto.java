@@ -4,7 +4,9 @@ package br.com.vinicius.sistoque;
 public class Produto {
     
     int codigo, quantidade;
-    String nome, unidade,localEstoque,descricao,fornecedor;
+    String nome;
+    String unidade,localEstoque,descricao;
+    String fornecedor;
 
     public Produto(int codigo, int quantidade, String nome, String unidade, String localEstoque, String descricao, String fornecedor) {
         this.codigo = codigo;
