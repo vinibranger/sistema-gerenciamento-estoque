@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #708090;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.RelatoriosController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #d3d3d3;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.vinicius.sistoque.RelatoriosController">
    <children>
-      <HBox alignment="CENTER" layoutX="260.0" layoutY="10.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="105.0" prefWidth="800.0" style="-fx-background-color: #708090;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox alignment="CENTER" layoutX="260.0" layoutY="10.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="105.0" prefWidth="800.0" style="-fx-background-color: #d3d3d3;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label alignment="CENTER" prefHeight="38.0" prefWidth="546.0" text="Relatório Quantidade Produtos" textAlignment="CENTER">
                <font>
@@ -24,9 +24,9 @@
             </Label>
          </children>
       </HBox>
-      <VBox alignment="CENTER" fillWidth="false" layoutY="150.0" prefHeight="300.0" prefWidth="955.0" style="-fx-background-color: #708090;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <VBox alignment="CENTER" fillWidth="false" layoutY="150.0" prefHeight="300.0" prefWidth="955.0" style="-fx-background-color: #d3d3d3;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <TableView fx:id="tabelaUpProdutos" prefHeight="200.0" prefWidth="492.0">
+            <TableView fx:id="tabelaUpProdutos" prefHeight="200.0" prefWidth="492.0" style="-fx-background-color: #d3d3d3;">
               <columns>
                 <TableColumn fx:id="nomeProduto" prefWidth="127.0" sortType="DESCENDING" text="Produto" />
                 <TableColumn fx:id="qntNova" prefWidth="86.0" sortType="DESCENDING" text="Quantidade" />

@@ -65,7 +65,7 @@ public class FornecedorDAO {
         try {
             Connection connection = ConnectionSingleton.getConnection();
             connection.createStatement(). //
-                    executeUpdate("INSERT INTO fornecedor(id_fornecedor,nome,cnpj_cpf,email,rua,num_endereco,bairro,cidade) values (" //
+                    executeUpdate("INSERT INTO fornecedor(id_fornecedor,nome,cnpj_cpf,email,telefone,rua,num_endereco,bairro,cidade) values (" //
                             + novoForne.getCodigoForne() //
                             + ", '" + novoForne.getNomeForne() + "'" //
                             + ", '" + novoForne.getCnpjForne() + "'" //
@@ -74,7 +74,9 @@ public class FornecedorDAO {
                             + ", '" + novoForne.getRua() + "'" //
                             + ", '" + novoForne.getNumero() + "'" //
                             + ", '" + novoForne.getBairro() + "'" //
-                            + ",' " + novoForne.getCidade() + "')");
+                            + ", '" + novoForne.getCidade() + "')");
+                 
+                            
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -84,17 +86,17 @@ public class FornecedorDAO {
         try {
             Connection connection = ConnectionSingleton.getConnection();
             connection.createStatement(). //
-                    executeUpdate("UPDATE produto SET " //
+                    executeUpdate("UPDATE fornecedor SET " //
                             + "nome = '" + fornecedorEditado.getNomeForne() + "'" //
-                            + "cnpj_cpf = '" + fornecedorEditado.getCnpjForne() + "'" //
-                            + "email = '" + fornecedorEditado.getEmail() + "'" //
-                            + "telefone = '" + fornecedorEditado.getTelefone() + "'" //
-                            + "rua = '" + fornecedorEditado.getRua() + "'" //
-                            + "num_endereco = '" + fornecedorEditado.getNumero() + "'" //
-                            + "bairro = '" + fornecedorEditado.getBairro() + "'" //
-                            + ", cidade = " + fornecedorEditado.getCidade() //
-                            + " WHERE codigo = " + fornecedorEditado.getCodigoForne() //
-                    );
+                            + ", cnpj_cpf = '" + fornecedorEditado.getCnpjForne() + "'" //
+                            + ", email = '" + fornecedorEditado.getEmail() + "'" //
+                            + ", telefone = '" + fornecedorEditado.getTelefone() + "'" //
+                            + ", rua = '" + fornecedorEditado.getRua() + "'" //
+                            + ", num_endereco = " + fornecedorEditado.getNumero() //
+                            + ", bairro = '" + fornecedorEditado.getBairro() + "'" //
+                            + ", cidade = '" + fornecedorEditado.getCidade() + "'" //
+                            + " WHERE id_fornecedor = " + fornecedorEditado.getCodigoForne()); 
+                    
 
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -106,7 +108,7 @@ public class FornecedorDAO {
         try {
             Connection connection = ConnectionSingleton.getConnection();
             connection.createStatement(). //
-                    executeUpdate("DELETE FROM produto where codigo = " + fornecedorParaRemover.getCodigoForne());
+                    executeUpdate("DELETE FROM fornecedor where id_fornecedor = " + fornecedorParaRemover.getCodigoForne());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -131,6 +133,43 @@ public class FornecedorDAO {
             String cidade = resultadoFornecedor.getString("cidade");
 
             return new Fornecedor(id_fornecedor, nome, cnpj_cpf, email, telefone, rua, num_endereco, bairro, cidade);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
+    
+    public List<Fornecedor> mostraPeloNome(String nomePesquisa) {
+        if (nomePesquisa == null || nomePesquisa.isBlank()) {
+            return getAll();
+        }
+        
+        try {
+            Connection connection = ConnectionSingleton.getConnection();
+            ResultSet resultadoFornecedores = connection. //
+                    createStatement(). //
+                    executeQuery("SELECT * FROM fornecedor WHERE nome like '%" + nomePesquisa + "%'");
+
+            List<Fornecedor> resultadoTodosOsFornecedor = new ArrayList<>();
+
+            while (resultadoFornecedores.next()) {
+                int codigoForne = resultadoFornecedores.getInt("id_fornecedor");
+                String nomeForne = resultadoFornecedores.getString("nome");
+                String cnpjForne = resultadoFornecedores.getString("cnpj_cpf");
+                String email = resultadoFornecedores.getString("email");
+                String telefone = resultadoFornecedores.getString("telefone");
+                String rua = resultadoFornecedores.getString("rua");
+                String numero = resultadoFornecedores.getString("num_endereco");
+                String bairro = resultadoFornecedores.getString("bairro");
+                String cidade = resultadoFornecedores.getString("cidade");
+               
+
+               Fornecedor FornecedorObterDoBanco = new Fornecedor(codigoForne, nomeForne, //
+                        cnpjForne, email, telefone, rua, numero, bairro, cidade);
+                resultadoTodosOsFornecedor.add(FornecedorObterDoBanco);
+            }
+
+            return resultadoTodosOsFornecedor;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

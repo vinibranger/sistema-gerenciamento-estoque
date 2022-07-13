@@ -46,9 +46,8 @@ public class FuncionarioDAO {
 
             List<Funcionario> resultadoTodosFuncionario = new ArrayList<>();
 
-            while (!resultadoFuncio.isLast()) {
-                resultadoFuncio.next();
-
+            while (resultadoFuncio.next()) {
+                
                 int codfuncionario = resultadoFuncio.getInt("codigo_funcio");//igual banco
                 String nome = resultadoFuncio.getString("nome");
                 int cpf = resultadoFuncio.getInt("cpf");
@@ -88,7 +87,7 @@ public class FuncionarioDAO {
                             + ", '" + novoFuncionario.getEmail() + "'" //
                             + ", '" + novoFuncionario.getTelefone() + "'" //
                             + ", '" + novoFuncionario.getRua() + "'" //
-                            + ", '" + novoFuncionario.getNumeroEnde() + "'" //
+                            + ", " + novoFuncionario.getNumeroEnde() + "" //
                             + ", '" + novoFuncionario.getBairro() + "'" //
                             + ", '" + novoFuncionario.getCidade() + "')");
         } catch (Exception e) {
@@ -100,19 +99,19 @@ public class FuncionarioDAO {
         try {
             Connection connection = ConnectionSingleton.getConnection();
             connection.createStatement(). //
-                    executeUpdate("UPDATE produto SET " //
+                    executeUpdate("UPDATE funcionario SET " //
                             + "nome = '" + funcionarioEditado.getNome() + "'" //
-                            + ", cpf = " + funcionarioEditado.getCpf() //
-                            + ", rg = " + funcionarioEditado.getRg() //
-                            + ", data_nascimento = " + funcionarioEditado.getDataNascimento() //
-                            + ", nacionalidade = " + funcionarioEditado.getNacionalidade() //
-                            + ", email = " + funcionarioEditado.getEmail() //
-                            + ", telefone = " + funcionarioEditado.getTelefone() //
-                            + ", rua = " + funcionarioEditado.getRua() //
-                            + ", numero_ende = " + funcionarioEditado.getNumeroEnde() //
-                            + ", bairro = " + funcionarioEditado.getBairro() //
-                            + ", cidade= " + funcionarioEditado.getCidade() //
-                            + " WHERE codigo = " + funcionarioEditado.getCodfuncionario() //
+                            + ", cpf = '" + funcionarioEditado.getCpf()+"'"  //
+                            + ", rg = '" + funcionarioEditado.getRg()+"'"  //
+                            + ", data_nascimento = '" + funcionarioEditado.getDataNascimento() +"'" //
+                            + ", nacionalidade = '" + funcionarioEditado.getNacionalidade()+"'"  //
+                            + ", email = '" + funcionarioEditado.getEmail()+"'"  //
+                            + ", telefone = '" + funcionarioEditado.getTelefone()+"'"  //
+                            + ", rua = '" + funcionarioEditado.getRua()+"'"  //
+                            + ", numero_ende = '" + funcionarioEditado.getNumeroEnde()+"'"  //
+                            + ", bairro = '" + funcionarioEditado.getBairro()+"'" //
+                            + ", cidade= '" + funcionarioEditado.getCidade()+"'" //
+                            + " WHERE codigo_funcio = " + funcionarioEditado.getCodfuncionario() //
                     );
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -123,10 +122,53 @@ public class FuncionarioDAO {
         try {
             Connection connection = ConnectionSingleton.getConnection();
             connection.createStatement(). //
-                    executeUpdate("DELETE FROM produto where codigo = " + FuncioRemover.getCodfuncionario());
+                    executeUpdate("DELETE FROM funcionario where codigo_funcio = " + FuncioRemover.getCodfuncionario());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
+    
+    public List<Funcionario> mostraPeloNome(String pesquisaNome) {
+        if (pesquisaNome == null || pesquisaNome.isBlank()) {
+            return getAll();
+        }
+        
+        try {
+            Connection connection = ConnectionSingleton.getConnection();
+            ResultSet resultadofuncio = connection. //
+                    createStatement(). //
+                    executeQuery("SELECT * FROM funcionario WHERE nome like '%" + pesquisaNome + "%'");
+
+            List<Funcionario> resultadoTodosOsfuncios = new ArrayList<>();
+            
+          
+            while (resultadofuncio.next()) {
+                int codfuncionario = resultadofuncio.getInt("codigo_funcio");//igual banco
+                String nome = resultadofuncio.getString("nome");
+                int cpf = resultadofuncio.getInt("cpf");
+                int rg = resultadofuncio.getInt("rg");
+                String dataNascimento = resultadofuncio.getString("bairro");
+                String nacionalidade = resultadofuncio.getString("nacionalidade");
+                String email = resultadofuncio.getString("email");
+                int telefone = resultadofuncio.getInt("telefone");
+                String rua = resultadofuncio.getString("rua");
+                int numeroEnde = resultadofuncio.getInt("numero_ende");
+                String bairro = resultadofuncio.getString("data_nascimento");
+                String cidade = resultadofuncio.getString("cidade");
+
+                Funcionario funcioObterDoBanco = new Funcionario(codfuncionario,numeroEnde,cpf,rg,telefone, //
+             nome,  dataNascimento,  nacionalidade,email,//
+             rua,bairro,cidade);
+                resultadoTodosOsfuncios.add(funcioObterDoBanco);
+            }
+
+            return resultadoTodosOsfuncios;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
+    
+    
 
 }

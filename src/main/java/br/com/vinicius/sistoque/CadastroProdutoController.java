@@ -1,5 +1,6 @@
 package br.com.vinicius.sistoque;
 
+import static br.com.vinicius.sistoque.CadastroFuncioController.funcionario;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -38,9 +39,21 @@ public class CadastroProdutoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        if (produto != null) {
+            codigoTextField.setText(Integer.toString(produto.getCodigo()));
+            quantidadeTextField.setText(Integer.toString(produto.quantidade));
+            nomeTextField.setText(produto.getNome());
+            unidadeTextField.setText(produto.getUnidade());
+            localEstoqueTextField.setText(produto.getLocalEstoque());
+            descriçaoTextField.setText(produto.getDescricao());
+          
+            
+            
+            
 
-        nomeFornecedores();
-
+            FuncionarioDAO daoDoFuncionario = new  FuncionarioDAO();
+            daoDoFuncionario.update( funcionario);
+        }
     }
 
     @FXML

@@ -39,13 +39,12 @@ public class MostrarEstoqueController implements Initializable {
     private TableColumn<Produto, String> unidadeProdutoTable;
     @FXML
     private TableView<Produto> tableProdutoEstoque;
-   
+
     @FXML
     private TextField pesquisaNome;
 
     public ObservableList<Produto> produtos;
-    
-       
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -56,14 +55,12 @@ public class MostrarEstoqueController implements Initializable {
         this.localEstoqueProdutoTable.setCellValueFactory(new PropertyValueFactory<>("localEstoque"));
         this.descriçaoProdutoTable.setCellValueFactory(new PropertyValueFactory<>("descricao"));
         this.fornecedorProdutoTable.setCellValueFactory(new PropertyValueFactory<>("fornecedor"));
-        
+
         this.produtos = this.tableProdutoEstoque.getItems();
         ProdutoDAO daoDeProdutos = new ProdutoDAO();
         List<Produto> produtosNoBanco = daoDeProdutos.mostraPeloNome(pesquisaNome.getText());
 
         this.produtos.addAll(produtosNoBanco);
-        
-        
 
     }
 
@@ -72,6 +69,13 @@ public class MostrarEstoqueController implements Initializable {
         App.setRoot("Principal");
 
     }
+    
+    @FXML
+    private void novo(ActionEvent event) throws IOException {
+        App.setRoot("CadastroProduto");
+
+    }
+
     @FXML
     private void pesquisarProduto(ActionEvent event) throws IOException {
         ProdutoDAO daoDeProdutos = new ProdutoDAO();
@@ -108,13 +112,12 @@ public class MostrarEstoqueController implements Initializable {
         App.setRoot("CadastroEntradaProduto");
 
     }
-        @FXML
+
+    @FXML
     public void remover() {
-        
+
         Produto produtoSelecionado = this.tableProdutoEstoque.getSelectionModel().getSelectedItem();
 
-        
-        
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Remoção");
         alert.setHeaderText(produtoSelecionado.getCodigo() + " " + produtoSelecionado.getNome());
@@ -122,10 +125,8 @@ public class MostrarEstoqueController implements Initializable {
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {
- 
             this.produtos.remove(produtoSelecionado);
 
-            
             ProdutoDAO daoDoProduto = new ProdutoDAO();
             daoDoProduto.delete(produtoSelecionado);
         }

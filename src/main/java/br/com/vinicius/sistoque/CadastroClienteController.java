@@ -43,11 +43,36 @@ public class CadastroClienteController implements Initializable {
     @FXML
     private TextField telefoneClientTextField;
 
-    
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+           
+        if (cliente != null) {
+            codClientTextField.setText(Integer.toString(cliente.getCodigoCliente()));
+            nomeClientTextField.setText(cliente.getNome());
+            cnpjCpfClientTextField.setText(Integer.toString(cliente.getCnpjCpf()));
+            emailClientTextField.setText(cliente.getEmail());
+            telefoneClientTextField.setText(Integer.toString(cliente.getTelefone()));
+            ruaClientTextField.setText(cliente.getRua());
+            numeroClientTextField.setText(Integer.toString(cliente.getNumeEndereco()));
+            bairroClientTextField.setText(cliente.getBairro());
+            cidadeClientTextField.setText(cliente.getCidade());
 
+            ClienteDAO daoDoCliente = new ClienteDAO();
+            daoDoCliente.update(cliente);
+            
+            
+        }
+        
+        
+
+    }
+
+    public static void setFornecedor(Fornecedor fornecedor) {
+        CadasFornecedorController.fornecedor = fornecedor;
+    }
+
+    public static Fornecedor getFornecedor() {
+        return CadasFornecedorController.fornecedor;
     }
 
     @FXML
@@ -72,10 +97,6 @@ public class CadastroClienteController implements Initializable {
                     this.ruaClientTextField.getText(), //          
                     this.bairroClientTextField.getText(), //
                     this.cidadeClientTextField.getText());
-          
-                    
-                   
-                    
 
             ClienteDAO daoDoCliente = new ClienteDAO();
             daoDoCliente.salvar(cliente);

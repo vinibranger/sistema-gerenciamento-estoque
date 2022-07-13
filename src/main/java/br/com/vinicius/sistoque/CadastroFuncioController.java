@@ -1,5 +1,6 @@
 package br.com.vinicius.sistoque;
 
+import static br.com.vinicius.sistoque.CadastroClienteController.cliente;
 import static br.com.vinicius.sistoque.CadastroProdutoController.produto;
 import java.io.IOException;
 import java.net.URL;
@@ -54,7 +55,22 @@ public class CadastroFuncioController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+         if (funcionario != null) {
+            codigo.setText(Integer.toString(funcionario.getCodfuncionario()));
+            nome.setText(funcionario.getNome());
+            cpf.setText(Integer.toString(funcionario.getCpf()));
+            rg.setText(Integer.toString(funcionario.getRg()));
+            email.setText(funcionario.getEmail());
+            telefone.setText(Integer.toString(funcionario.getTelefone()));
+            rua.setText(funcionario.getRua());
+            numero.setText(Integer.toString(funcionario.getNumeroEnde()));
+            bairro.setText(funcionario.getBairro());
+            cidade.setText(funcionario.getCidade());
+            nacionalidade.setText(funcionario.getNacionalidade());
 
+            FuncionarioDAO daoDoFuncionario = new  FuncionarioDAO();
+            daoDoFuncionario.update( funcionario);
+        }
     }
 
     @FXML

@@ -2,6 +2,7 @@ package br.com.vinicius.sistoque;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -45,7 +46,31 @@ public class CadasFornecedorController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+         if (fornecedor != null) {
+            codForneTextField.setText(Integer.toString(fornecedor.getCodigoForne()));
+            nomeForneTextField.setText(fornecedor.getNomeForne());
+            cnpjCpfForneTextField.setText(fornecedor.getCnpjForne());
+            emailForneTextField.setText(fornecedor.getEmail());
+            telefoneForneTextField.setText(fornecedor.getTelefone());
+            ruaForneTextField.setText(fornecedor.getRua());
+            numeroForneTextField.setText(fornecedor.getNumero());
+            bairroForneTextField.setText(fornecedor.getBairro());
+            cidadeForneTextField.setText(fornecedor.getCidade());
+            
+            FornecedorDAO daoDoFornecedor = new FornecedorDAO();
+            daoDoFornecedor.update(fornecedor);
+        }
+         
+    }
+     
+    
+    public static void setFornecedor(Fornecedor fornecedor) {
+        CadasFornecedorController.fornecedor = fornecedor;
+    }
 
+    
+    public static Fornecedor getFornecedor() {
+        return  CadasFornecedorController.fornecedor;
     }
 
     @FXML

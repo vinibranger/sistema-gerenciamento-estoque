@@ -13,6 +13,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ConsuFornecedorController implements Initializable {
@@ -44,6 +45,8 @@ public class ConsuFornecedorController implements Initializable {
 
     @FXML
     private TableColumn<Fornecedor, String> telefoneFornecedorTable;
+    @FXML
+    private TextField pesquisaNome;
 
     @FXML
     private TableView<Fornecedor> tableFornecedorEstoque;
@@ -70,7 +73,7 @@ public class ConsuFornecedorController implements Initializable {
     }
 
     @FXML
-    void remover() throws IOException {
+    void remover()  {
         Fornecedor produtoSelecionado = this.tableFornecedorEstoque.getSelectionModel().getSelectedItem();
         //quando for remover vem a confirmaçao de remover
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -81,18 +84,20 @@ public class ConsuFornecedorController implements Initializable {
         if (result.get() == ButtonType.OK) {
             this.fornecedores.remove(produtoSelecionado);
         }
-        this.tableFornecedorEstoque.refresh();
+        FornecedorDAO daoDoFornecedor = new FornecedorDAO();
+        daoDoFornecedor.delete(produtoSelecionado);
+        
     }
-/*
+
     @FXML
     void editar() throws IOException {
         Fornecedor fornecedorSelecionado = this.tableFornecedorEstoque.getSelectionModel().getSelectedItem();
         if (fornecedorSelecionado != null) {
-            CadasFornecedorController.fornecedor(fornecedorSelecionado);
+            CadasFornecedorController.fornecedor = fornecedorSelecionado;
 
             App.setRoot("CadasFornecedor");
 
-            Fornecedor fornecedorAlterado = CadasFornecedorController.fornecedor();
+            Fornecedor fornecedorAlterado = CadasFornecedorController.fornecedor;
 
             fornecedorSelecionado.setCodigoForne(fornecedorAlterado.getCodigoForne());
             fornecedorSelecionado.setNomeForne(fornecedorAlterado.getNomeForne());
@@ -104,22 +109,40 @@ public class ConsuFornecedorController implements Initializable {
             fornecedorSelecionado.setBairro(fornecedorAlterado.getBairro());
             fornecedorSelecionado.setCidade(fornecedorAlterado.getCidade());
 
-          
-            
+            this.tableFornecedorEstoque.refresh();
+
+            FornecedorDAO daoDoFornecedor = new FornecedorDAO();
+            daoDoFornecedor.update(fornecedorSelecionado);
+
         }
     }
-    
+
+    @FXML
+    private void pesquisarFornecedor(ActionEvent event) throws IOException {
+        FornecedorDAO daoDeProdutos = new FornecedorDAO();
+        List<Fornecedor> fornecedorDAONoBanco = daoDeProdutos.mostraPeloNome(pesquisaNome.getText());
+
+        this.fornecedores.clear();//limpa para nao duplicar 
+        this.fornecedores.addAll(fornecedorDAONoBanco);//sozinho duplica os produtos da lista
+    }
+
     public static void setFornecedor(Fornecedor fornecedor) {
         CadasFornecedorController.fornecedor = fornecedor;
     }
-    
+
     public static Fornecedor getFornecedor() {
         return CadasFornecedorController.fornecedor;
     }
-*/
+
     @FXML
     private void voltar(ActionEvent event) throws IOException {
         App.setRoot("Principal");
-    
+
     }
+    @FXML
+    private void novo(ActionEvent event) throws IOException {
+        App.setRoot("CadasFornecedor");
+
+    }
+
 }
