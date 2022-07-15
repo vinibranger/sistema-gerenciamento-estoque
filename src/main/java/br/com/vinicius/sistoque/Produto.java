@@ -3,7 +3,8 @@ package br.com.vinicius.sistoque;
 
 public class Produto {
     
-    int codigo, quantidade;
+    int codigo;
+    int quantidade;
     String nome;
     String unidade;
     String localEstoque,descricao;

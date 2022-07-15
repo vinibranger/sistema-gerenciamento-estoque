@@ -47,13 +47,11 @@ public class CadastroProdutoController implements Initializable {
             localEstoqueTextField.setText(produto.getLocalEstoque());
             descriçaoTextField.setText(produto.getDescricao());
           
-            
-            
-            
-
             FuncionarioDAO daoDoFuncionario = new  FuncionarioDAO();
             daoDoFuncionario.update( funcionario);
         }
+        
+        nomeFornecedores();
     }
 
     @FXML

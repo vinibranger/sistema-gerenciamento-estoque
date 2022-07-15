@@ -53,7 +53,7 @@ public class ClienteDAO {
                 String bairro = resultadoCliente.getString("bairro");
                 String cidade = resultadoCliente.getString("cidade");
 
-                Cliente ClienteObterDoBanco = new Cliente(codigoCliente, numeEndereco, cnpjCpf, telefone, nome,//
+                Cliente ClienteObterDoBanco = new Cliente(codigoCliente, cnpjCpf, telefone, numeEndereco, nome,//
                         email, rua, bairro, cidade);
                 resultadoTodosCliente.add(ClienteObterDoBanco);
             }

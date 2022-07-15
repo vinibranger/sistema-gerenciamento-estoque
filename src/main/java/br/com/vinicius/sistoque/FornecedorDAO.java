@@ -72,7 +72,7 @@ public class FornecedorDAO {
                             + ", '" + novoForne.getEmail() + "'" //
                             + ", '" + novoForne.getTelefone() + "'" //
                             + ", '" + novoForne.getRua() + "'" //
-                            + ", '" + novoForne.getNumero() + "'" //
+                            + ", " + novoForne.getNumero() + "" //
                             + ", '" + novoForne.getBairro() + "'" //
                             + ", '" + novoForne.getCidade() + "')");
                  
