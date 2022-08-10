@@ -4,7 +4,7 @@ Sistema para controle de estoque :
 
 * Login com nível de acesso
 * Historico de entrada e saida dos produtos 
-* CRUDL  
+* CRUD  
 
 
 <img src="https://github.com/vinibranger/sistema-gerenciamento-estoque/blob/main/Telas/tela%20logi.png" width="500" width="auto"><img src="https://github.com/vinibranger/sistema-gerenciamento-estoque/blob/main/Telas/tela%20inial.png" width="500" width="auto">
